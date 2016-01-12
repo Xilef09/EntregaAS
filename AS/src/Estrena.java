@@ -4,8 +4,8 @@ public class Estrena extends Representacio{
 
 	private Integer recarrec;
 	
-	public Estrena(Integer recarrec, Float preu, Date data) {
-		super(preu, data, recarrec);
+	public Estrena(Integer recarrec, Float preu, Date data, TipusSessio sessio, String nomLocal) {
+		super(preu, data, recarrec, sessio, nomLocal, nomLocal);
 		this.recarrec = recarrec;
 	}
 
