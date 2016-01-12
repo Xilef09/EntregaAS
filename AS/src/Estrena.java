@@ -1,8 +1,20 @@
+import java.util.Date;
 
-public class Estrena {
+public class Estrena extends Representacio{
 
-	public Estrena() {
-		// TODO Auto-generated constructor stub
+	private Integer recarrec;
+	
+	public Estrena(Integer recarrec, Float preu, Date data) {
+		super(preu, data, recarrec);
+		this.recarrec = recarrec;
+	}
+
+	public Integer getRecarrec() {
+		return recarrec;
+	}
+
+	public void setRecarrec(Integer recarrec) {
+		this.recarrec = recarrec;
 	}
 
 }
