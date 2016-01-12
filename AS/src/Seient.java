@@ -6,9 +6,15 @@ public class Seient {
 
 	private String nomLocal;
 	
-	public Seient(Integer fila, Integer columna, String nomLocal) {
+	public Seient(Integer fila, Integer columna, String nomLocal) throws Exception {
 		// TODO Auto-generated constructor stub
 		super();
+		if (nomLocal.isEmpty() || nomLocal == null)
+			throw new Exception ("Error: falta escriure el nom del local\n");
+		if (fila<=0)
+			throw new Exception ("Error: la fila no es correcte\n");
+		if (columna<=0)
+			throw new Exception ("Error: la columna no es correcte\n");
 		this.fila=fila;
 		this.nomLocal=nomLocal;
 		this.columna=columna;

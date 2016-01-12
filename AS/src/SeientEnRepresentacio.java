@@ -17,7 +17,22 @@ public class SeientEnRepresentacio {
 	private Integer columna;
 	private Estat estat;
 	
-	public SeientEnRepresentacio(Estat estat, TipusSessio sessio, String titol, String idEntrada, String nomLocal, String nomLocalSeient, Integer fila, Integer columna) {
+	public SeientEnRepresentacio(Estat estat, TipusSessio sessio, String titol, String idEntrada, String nomLocal, String nomLocalSeient, Integer fila, Integer columna) throws Exception {
+		super();
+		if (nomLocalSeient.isEmpty() || nomLocalSeient == null)
+			throw new Exception ("Error: el nom del local del seient es incorrecte\n");
+		if (fila<=0 || fila==null)
+			throw new Exception ("Error: la fila no es correcte\n");
+		if (columna<=0 || columna==null)
+			throw new Exception ("Error: la columna no es correcte\n");
+		if (sessio == null)
+			throw new Exception ("Error: sessio incorrecte\n");
+		if (titol.isEmpty() || titol == null)
+			throw new Exception ("Error: falta escriure un titol\n");
+		if (nomLocal.isEmpty() || nomLocal == null)
+			throw new Exception ("Error: falta escriure un nom de local\n");
+		if (!nomLocal.equals(nomLocalSeient))
+			throw new Exception ("Error: el nom del local ha de ser el matieix que el del local del seient\n");
 		this.estat=estat;
 		this.sessio=sessio;
 		this.titol=titol;

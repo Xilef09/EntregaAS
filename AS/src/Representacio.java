@@ -16,8 +16,12 @@ public class Representacio {
 	private Date data;
 	private Integer nombreSeientsLliures;
 	
-	public Representacio(Float preu, Date data, Integer nombreSeientsLliures, TipusSessio sessio, String titolEspectacle, String nomLocal) {
+	public Representacio(Float preu, Date data, Integer nombreSeientsLliures, TipusSessio sessio, String titolEspectacle, String nomLocal) throws Exception {
 		super();
+		if (titolEspectacle.isEmpty() || titolEspectacle == null)
+			throw new Exception ("Error: falta escriure un titol d'espectacle\n");
+		if (nomLocal.isEmpty() || nomLocal == null)
+			throw new Exception ("Error: falta escriure un nom de local\n");
 		this.preu = preu;
 		this.data = data;
 		this.nombreSeientsLliures = nombreSeientsLliures;		

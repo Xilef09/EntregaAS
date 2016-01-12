@@ -12,10 +12,15 @@ public class Espectacle {
 	private Integer participants;
 	
 	/**
+	 * @throws Exception 
 	 * 
 	 */
-	public Espectacle(String titol, Integer participants) {
+	public Espectacle(String titol, Integer participants) throws Exception {
 		super();
+		if (titol.isEmpty() || titol == null)
+			throw new Exception ("Error: falta escriure un titol\n");
+		if (participants<=0)
+			throw new Exception ("Error: El numero de participants ha de ser un enter major que 0\n");
 		this.titol = titol;
 		this.participants = participants;
 	}
