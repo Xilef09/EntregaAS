@@ -17,7 +17,7 @@
 	      postgres
 	   </property>
 	   <property name="hibernate.connection.password">
-	      19941234
+	      1234
 	   </property>
 
 	 <mapping resource="Seients.hbm.xml"/>
