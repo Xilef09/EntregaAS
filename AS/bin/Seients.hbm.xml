@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 01-nov-2015 22:44:32 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="Seients" table="seients">
+    <class name="Seients" table="seient">
 	    <composite-id>
 	        <key-property name="fila" type="int">
 	            <column name="fila" />
