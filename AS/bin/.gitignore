@@ -1,6 +1,17 @@
+/Entrada.class
+/Espectacle.class
+/Estrena.class
 /Local.class
+/Local.hbm.out.xml
 /Local.hbm.xml
 /Main.class
+/Main2.class
+/Representacio.class
+/Seient.class
+/SeientEnRepresentacio.class
 /Seients.class
 /Seients.hbm.xml
+/Sessio.class
+/hibernate.cfg.out.xml
 /hibernate.cfg.xml
+/Espectacle.hbm.xml
