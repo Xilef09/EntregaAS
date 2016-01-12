@@ -5,7 +5,7 @@
 <hibernate-mapping>
  <class name="Local" table="local">
   <id name="nom" type="java.lang.String">
-   <column name="nomlocal"/>
+   <column name="nom"/>
   </id>
   <property name="adreca" type="java.lang.String">
    <column name="adreca"/>
