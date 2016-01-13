@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import Domini.SeientEnRepresentacio;
+
 public interface ControladorSeientsEnRepresentacio {
 	public SeientEnRepresentacio get(String nomSessio, String nomLocal,String nomLocalSeient,
 										int fila, int columna, String identificador);
