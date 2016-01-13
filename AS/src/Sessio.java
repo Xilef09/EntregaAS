@@ -1,24 +1,27 @@
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="sessio")
 public class Sessio {
-	
-	public enum TipusSessio {
-	    mati, tarda, nit
-	}
-	
-	private TipusSessio sessio;
+	@Id
+	@Column(name="sessio")
+	private String sessio;
 
-	public Sessio(TipusSessio sessio) throws Exception {
+	public Sessio(String sessio) throws Exception {
 		super();
 		if (sessio == null)
 			throw new Exception ("Error: ha fallat la sessio\n");
 		this.sessio=sessio;
 	}
 
-	public TipusSessio getSessio() {
+	public String getSessio() {
 		return sessio;
 	}
 
-	public void setSessio(TipusSessio sessio) {
+	public void setSessio(String sessio) {
 		this.sessio = sessio;
 	}
 

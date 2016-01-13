@@ -5,5 +5,18 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HIbernate"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/postgres"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate"/>
+<<<<<<< HEAD
+=======
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/geronimo-jta_1.1_spec-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/hibernate-commons-annotations-5.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/hibernate-core-5.0.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/jandex-1.2.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/javassist-3.18.1-GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/jboss-logging-3.3.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sin nombre/Downloads/postgresql-9.4-1204.jdbc4.jar"/>
+>>>>>>> babe0cde2d205f84bc9d62b458dea18cf02ece76
 	<classpathentry kind="output" path="bin"/>
 </classpath>

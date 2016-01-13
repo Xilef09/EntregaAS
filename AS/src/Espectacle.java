@@ -1,14 +1,17 @@
-/**
- * 
- */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-/**
- * @author GerardDuch
- *
- */
+
+@Entity
+@Table(name="espectacle")
 public class Espectacle {
-
+	
+	@Id
+	@Column(name = "titol")
 	private String titol;
+	@Column(name = "participants")
 	private Integer participants;
 	
 	public Espectacle() {
