@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-ene-2016 11:06:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="SeientEnRepresentacio" table="SEIENTENREPRESENTACIO">
+        <id name="idEntrada" type="java.lang.String">
+            <column name="IDENTRADA" />
+            <generator class="assigned" />
+        </id>
+        <property name="sessio">
+            <column name="SESSIO" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">SeientEnRepresentacio$TipusSessio</param>
+            </type>
+        </property>
+        <property name="titol" type="java.lang.String">
+            <column name="TITOL" />
+        </property>
+        <property name="nomLocal" type="java.lang.String">
+            <column name="NOMLOCAL" />
+        </property>
+        <property name="nomLocalSeient" type="java.lang.String">
+            <column name="NOMLOCALSEIENT" />
+        </property>
+        <property name="fila" type="java.lang.Integer">
+            <column name="FILA" />
+        </property>
+        <property name="columna" type="java.lang.Integer">
+            <column name="COLUMNA" />
+        </property>
+        <property name="estat">
+            <column name="ESTAT" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">SeientEnRepresentacio$Estat</param>
+            </type>
+        </property>
+    </class>
+</hibernate-mapping>

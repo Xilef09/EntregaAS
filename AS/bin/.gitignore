@@ -8,3 +8,7 @@
 /SeientEnRepresentacio$TipusSessio.class
 /Entrada.hbm.xml
 /Estrena.hbm.xml
+/Representacio.hbm.xml
+/SeientEnRepresentacio.hbm.xml
+/Sessio.hbm.xml
+/Seient.hbm.xml
