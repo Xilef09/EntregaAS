@@ -15,7 +15,6 @@ public class Representacio implements Serializable {
 	@Column (name="sessio")
 	private String sessio;
 	
-	@Id
 	@Column (name="titol")
 	private String titolEspectacle;
 	
@@ -32,6 +31,9 @@ public class Representacio implements Serializable {
 	@Column (name="nombreseientslliures")
 	private Integer nombreSeientsLliures;
 	
+	public Representacio() {
+		
+	}
 	public Representacio(Float preu, Date data, Integer nombreSeientsLliures, String sessio, String titolEspectacle, String nomLocal) throws Exception {
 		super();
 		if (titolEspectacle.isEmpty() || titolEspectacle == null)
