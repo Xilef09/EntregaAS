@@ -1,3 +1,4 @@
+package Domini;
 import java.util.Date;
 
 public class Estrena extends Representacio{
