@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ControladorRepresentacio {
+public class ControladorRepresentacioDB {
 
 	private CtrlDataFactory dataFactory = null;
 	

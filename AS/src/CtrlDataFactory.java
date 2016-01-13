@@ -1,14 +1,14 @@
 
 public class CtrlDataFactory {
 	private static CtrlDataFactory instance= null;
-	private ControladorRepresentacio controladorRepresentacio = new ControladorRepresentacio();
-	private ControladorEspectacle controladorEspectacle = new ControladorEspectacle();
-	private ControladorSessio controladorSessio = new ControladorSessio();
-	private ControladorSeients controladorSeients = new ControladorSeients();
-	private ControladorSeientsEnRepresentacio controladorSeientsEnRepresentacio = new ControladorSeientsEnRepresentacio();
-	private ControladorLocal controladorLocal = new ControladorLocal();
-	private ControladorEstrena controladorEstrena = new ControladorEstrena();
-	private ControladorEntrada controladorEntrada = new ControladorEntrada();
+	private ControladorRepresentacioDB controladorRepresentacio = new ControladorRepresentacioDB();
+	private ControladorEspectacleDB controladorEspectacle = new ControladorEspectacleDB();
+	private ControladorSessioDB controladorSessio = new ControladorSessioDB();
+	private ControladorSeientsDB controladorSeients = new ControladorSeientsDB();
+	private ControladorSeientsEnRepresentacioDB controladorSeientsEnRepresentacio = new ControladorSeientsEnRepresentacioDB();
+	private ControladorLocalDB controladorLocal = new ControladorLocalDB();
+	private ControladorEstrenaDB controladorEstrena = new ControladorEstrenaDB();
+	private ControladorEntradaDB controladorEntrada = new ControladorEntradaDB();
 	protected CtrlDataFactory(){
 	}
 	
