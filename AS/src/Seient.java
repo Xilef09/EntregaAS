@@ -1,9 +1,21 @@
+import java.io.Serializable;
 
-public class Seient {
-	
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "seient")
+public class Seient implements Serializable{
+	@Id
+	@Column (name="fila")
 	private Integer fila;
+	@Id
+	@Column (name="columna")
 	private Integer columna;
-
+	@Id
+	@Column (name="nomlocal")
 	private String nomLocal;
 	
 	public Seient(Integer fila, Integer columna, String nomLocal) throws Exception {

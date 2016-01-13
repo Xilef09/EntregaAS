@@ -4,7 +4,7 @@ public class Estrena extends Representacio{
 
 	private Integer recarrec;
 	
-	public Estrena(Integer recarrec, Float preu, Date data, TipusSessio sessio, String nomLocal, String titolEspectacle, Integer numSeientsLliures) throws Exception {
+	public Estrena(Integer recarrec, Float preu, Date data, String sessio, String nomLocal, String titolEspectacle, Integer numSeientsLliures) throws Exception {
 		super(preu, data, numSeientsLliures, sessio, titolEspectacle, nomLocal);
 		if (titolEspectacle.isEmpty() || titolEspectacle == null)
 			throw new Exception ("Error: falta escriure un titol d'espectacle\n");

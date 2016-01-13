@@ -11,6 +11,7 @@ public class CtrlRepresentacions {
 	
 	public ArrayList<Representacio> consultaRepresentacions(String titolEspectacle, String data){
         //CtrlJugador Cj = dataFactory.getCtrlJugador();
+		return new ArrayList<Representacio>();
 
 	}
 	

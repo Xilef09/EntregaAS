@@ -1,22 +1,40 @@
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="entrada")
 public class Entrada {
 	
+	@Id
+	@Column(name ="identificador")
 	private String identificador;
+	
+	@Column(name="dniclient")
 	private String dniClient;
+	
+	@Column(name="nombreespectadors")
 	private Integer nombreEspectadors;
+	
+	@Column(name="data")
 	private String data;
+	
+	@Column(name="preu")
 	private Float preu;
 	
-	public enum TipusSessio {
-	    mati, tarda, nit
-	}
+	@Column (name="sessio")
+	private String sessio;
 	
-	private TipusSessio sessio;
+	@Column (name="titol")
 	private String titol;
+	
+	@Column (name="nomlocal")
 	private String nomLocal;
 
-	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, String data, Float preu, TipusSessio sessio, String titol, String nomLocal) throws Exception {
+	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, String data, Float preu, String sessio, String titol, String nomLocal) throws Exception {
 		super();
 		if (identificador.isEmpty() || identificador == null)
 			throw new Exception ("Error: l'identificador no es correcte\n");
@@ -74,11 +92,11 @@ public class Entrada {
 		this.preu = preu;
 	}
 
-	public TipusSessio getSessio() {
+	public String getSessio() {
 		return sessio;
 	}
 
-	public void setSessio(TipusSessio sessio) {
+	public void setSessio(String sessio) {
 		this.sessio = sessio;
 	}
 
