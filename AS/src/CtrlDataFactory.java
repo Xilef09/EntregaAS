@@ -9,6 +9,8 @@ public class CtrlDataFactory {
 	private ControladorLocalDB controladorLocal = new ControladorLocalDB();
 	private ControladorEstrenaDB controladorEstrena = new ControladorEstrenaDB();
 	private ControladorEntradaDB controladorEntrada = new ControladorEntradaDB();
+	
+	
 	protected CtrlDataFactory(){
 	}
 	
