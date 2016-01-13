@@ -1,4 +1,4 @@
 
-public class ControladorSeientsEnRepresentacioDB {
+public class ControladorSeientsEnRepresentacioDB implements ControladorSeientsEnRepresentacio{
 
 }

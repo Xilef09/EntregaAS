@@ -1,4 +1,4 @@
 
-public class ControladorEstrenaDB {
+public class ControladorEstrenaDB implements ControladorEstrena{
 
 }

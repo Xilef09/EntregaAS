@@ -1,4 +1,4 @@
 
-public class ControladorLocalDB {
+public class ControladorLocalDB implements ControladorLocal{
 
 }
