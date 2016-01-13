@@ -5,7 +5,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HIbernate"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/postgres"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate"/>
-<<<<<<< HEAD
 	<classpathentry kind="lib" path="/Users/GerardDuch/Desktop/postgresql-9.4-1204.jdbc4.jar"/>
 	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/jboss-logging-3.3.0.Final.jar"/>
 	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/javassist-3.18.1-GA.jar"/>
@@ -16,9 +15,6 @@
 	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/hibernate-commons-annotations-5.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/antlr-2.7.7.jar"/>
-=======
-<<<<<<< HEAD
-=======
 	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/antlr-2.7.7.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/geronimo-jta_1.1_spec-1.1.1.jar"/>
@@ -29,7 +25,5 @@
 	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/javassist-3.18.1-GA.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/hiber/jboss-logging-3.3.0.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Sin nombre/Downloads/postgresql-9.4-1204.jdbc4.jar"/>
->>>>>>> babe0cde2d205f84bc9d62b458dea18cf02ece76
->>>>>>> 01aaaaff172787c370df815b0e74a4bbdf2f2e9c
 	<classpathentry kind="output" path="bin"/>
 </classpath>
