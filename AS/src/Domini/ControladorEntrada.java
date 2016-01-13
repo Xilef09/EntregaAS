@@ -7,7 +7,7 @@ public class ControladorEntrada {
 	}
 	
 	public Boolean existeixEntrada(String ID){
-		
+		return null;
 	}
 
 }

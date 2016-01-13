@@ -9,10 +9,10 @@ public class ControladorRepresentacio {
 	}
 
 	public Representacio getRepresentacio(String nomLocal, String sessio){
-		
+		return null;
 	}
 	
 	public ArrayList<Representacio> getAll(){
-		
+		return null;
 	}
 }

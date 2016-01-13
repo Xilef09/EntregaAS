@@ -2,8 +2,15 @@ package Domini;
 
 public class FactoryControladors {
 
-	public FactoryControladors() {
-		// TODO Auto-generated constructor stub
-	}
+	private static FactoryControladors instance = null;
+
+	protected FactoryControladors() {}
+
+	public static FactoryControladors getInstance() {
+        if (instance == null) {
+            instance = new FactoryControladors();
+        }
+        return instance;
+    }
 
 }
