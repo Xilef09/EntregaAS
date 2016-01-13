@@ -3,25 +3,25 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 13-ene-2016 11:05:38 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="Representacio" table="REPRESENTACIO">
+    <class name="Representacio" table="representacio">
         <id name="sessio" type="org.hibernate.type.EnumType">
-            <column name="SESSIO" />
+            <column name="sessio" />
             <generator class="assigned" />
         </id>
         <property name="titolEspectacle" type="java.lang.String">
-            <column name="TITOLESPECTACLE" />
+            <column name="titol" />
         </property>
         <property name="nomLocal" type="java.lang.String">
-            <column name="NOMLOCAL" />
+            <column name="nomlocal" />
         </property>
         <property name="preu" type="java.lang.Float">
-            <column name="PREU" />
+            <column name="preu" />
         </property>
         <property name="data" type="java.util.Date">
-            <column name="DATA" />
+            <column name="data" />
         </property>
         <property name="nombreSeientsLliures" type="java.lang.Integer">
-            <column name="NOMBRESEIENTSLLIURES" />
+            <column name="nombreseientslliures" />
         </property>
     </class>
 </hibernate-mapping>

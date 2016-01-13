@@ -2,7 +2,7 @@
 public class Sessio {
 	
 	public enum TipusSessio {
-	    matí, tarda, nit
+	    mati, tarda, nit
 	}
 	
 	private TipusSessio sessio;

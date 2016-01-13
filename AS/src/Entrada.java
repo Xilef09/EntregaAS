@@ -5,7 +5,7 @@ public class Entrada {
 	private String identificador;
 	private String dniClient;
 	private Integer nombreEspectadors;
-	private Date data;
+	private String data;
 	private Float preu;
 	
 	public enum TipusSessio {
@@ -16,7 +16,7 @@ public class Entrada {
 	private String titol;
 	private String nomLocal;
 
-	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, Date data, Float preu, TipusSessio sessio, String titol, String nomLocal) throws Exception {
+	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, String data, Float preu, TipusSessio sessio, String titol, String nomLocal) throws Exception {
 		super();
 		if (identificador.isEmpty() || identificador == null)
 			throw new Exception ("Error: l'identificador no es correcte\n");
@@ -58,11 +58,11 @@ public class Entrada {
 		this.nombreEspectadors = nombreEspectadors;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

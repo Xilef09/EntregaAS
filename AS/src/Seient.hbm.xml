@@ -3,16 +3,16 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 13-ene-2016 11:07:05 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="Seient" table="SEIENT">
+    <class name="Seient" table="seient">
         <id name="fila" type="java.lang.Integer">
-            <column name="FILA" />
+            <column name="fila" />
             <generator class="assigned" />
         </id>
         <property name="columna" type="java.lang.Integer">
-            <column name="COLUMNA" />
+            <column name="columna" />
         </property>
         <property name="nomLocal" type="java.lang.String">
-            <column name="NOMLOCAL" />
+            <column name="nomlocal" />
         </property>
     </class>
 </hibernate-mapping>

@@ -11,6 +11,10 @@ public class Espectacle {
 	private String titol;
 	private Integer participants;
 	
+	public Espectacle() {
+		
+	}
+	
 	/**
 	 * @throws Exception 
 	 * 
