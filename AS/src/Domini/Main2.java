@@ -1,3 +1,5 @@
+package Domini;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -7,7 +9,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-
+import Domini.Espectacle;
+import Domini.Local;
+import Persistencia.ControladorLocalDB;
 
 public class Main2 {
 
@@ -39,21 +43,5 @@ public class Main2 {
 			System.out.println(al.get(i).getNom());
 		}
 	}
-	
-	private static void probarEspectaculo() {
-		
-		//Crear espectaculo
-		Scanner sc = new Scanner(System.in);
-		session.beginTransaction();
-		
-		System.out.println("Lista de espectaculos");
-		session.beginTransaction();
-		String vec = "FROM Espectacle";
-		List as = session.createQuery(vec).list();
-		for (Iterator iter = as.iterator(); iter.hasNext();) {
-			Espectacle s = (Espectacle) iter.next();
-			System.out.println(s.getTitol() + Integer.toString(s.getParticipants()));
-		}
-		session.getTransaction().commit();
-	}
+
 }

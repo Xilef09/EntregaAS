@@ -1,3 +1,6 @@
+import Persistencia.ControladorLocal;
+import Persistencia.ControladorLocalDB;
+
 
 public class CtrlDataFactory {
 	private static CtrlDataFactory instance= null;
@@ -9,6 +12,8 @@ public class CtrlDataFactory {
 	private ControladorLocalDB controladorLocal = new ControladorLocalDB();
 	private ControladorEstrenaDB controladorEstrena = new ControladorEstrenaDB();
 	private ControladorEntradaDB controladorEntrada = new ControladorEntradaDB();
+	
+	
 	protected CtrlDataFactory(){
 	}
 	
