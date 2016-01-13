@@ -47,7 +47,4 @@ public class ControladorRepresentacioDB implements ControladorRepresentacio{
 		factory.close();
 		return l;
 	}
-	
-	
-	
 }
