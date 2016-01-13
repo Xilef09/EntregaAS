@@ -12,9 +12,6 @@ public class SeientEnRepresentacio implements Serializable{
 	@Column(name="sessio")
 	private String sessio;
 	
-	@Column(name="titol")
-	private String titol;
-	
 	@Id
 	@Column(name="nomlocal")
 	private String nomLocal;
@@ -38,7 +35,7 @@ public class SeientEnRepresentacio implements Serializable{
 	@Column(name="estat")
 	private Integer estat; // 0 libre 1 ocupado
 	
-	public SeientEnRepresentacio(Integer estat, String sessio, String titol, String idEntrada, String nomLocal, String nomLocalSeient, Integer fila, Integer columna) throws Exception {
+	public SeientEnRepresentacio(Integer estat, String sessio, String idEntrada, String nomLocal, String nomLocalSeient, Integer fila, Integer columna) throws Exception {
 		super();
 		if (nomLocalSeient.isEmpty() || nomLocalSeient == null)
 			throw new Exception ("Error: el nom del local del seient es incorrecte\n");
@@ -48,15 +45,12 @@ public class SeientEnRepresentacio implements Serializable{
 			throw new Exception ("Error: la columna no es correcte\n");
 		if (sessio == null)
 			throw new Exception ("Error: sessio incorrecte\n");
-		if (titol.isEmpty() || titol == null)
-			throw new Exception ("Error: falta escriure un titol\n");
 		if (nomLocal.isEmpty() || nomLocal == null)
 			throw new Exception ("Error: falta escriure un nom de local\n");
 		if (!nomLocal.equals(nomLocalSeient))
 			throw new Exception ("Error: el nom del local ha de ser el matieix que el del local del seient\n");
 		this.estat=estat;
 		this.sessio=sessio;
-		this.titol=titol;
 		this.nomLocal=nomLocal;
 		this.idEntrada=idEntrada;
 		this.nomLocalSeient=nomLocalSeient;
@@ -78,14 +72,6 @@ public class SeientEnRepresentacio implements Serializable{
 
 	public void setSessio(String sessio) {
 		this.sessio = sessio;
-	}
-
-	public String getTitol() {
-		return titol;
-	}
-
-	public void setTitol(String titol) {
-		this.titol = titol;
 	}
 
 	public String getIdEntrada() {
