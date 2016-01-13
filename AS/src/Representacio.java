@@ -1,22 +1,37 @@
+import java.io.Serializable;
 import java.util.Date;
 
-public class Representacio {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="representacio")
+public class Representacio implements Serializable {
 	
-	public enum TipusSessio {
-	    mati, tarda, nit
-	}
+	@Id
+	@Column (name="sessio")
+	private String sessio;
 	
-	private TipusSessio sessio;
-	
+	@Id
+	@Column (name="titol")
 	private String titolEspectacle;
 	
+	@Id
+	@Column (name="nomlocal")
 	private String nomLocal;
 	
+	@Column (name="preu")
 	private Float preu;
+	
+	@Column (name="data")
 	private Date data;
+	
+	@Column (name="nombreseientslliures")
 	private Integer nombreSeientsLliures;
 	
-	public Representacio(Float preu, Date data, Integer nombreSeientsLliures, TipusSessio sessio, String titolEspectacle, String nomLocal) throws Exception {
+	public Representacio(Float preu, Date data, Integer nombreSeientsLliures, String sessio, String titolEspectacle, String nomLocal) throws Exception {
 		super();
 		if (titolEspectacle.isEmpty() || titolEspectacle == null)
 			throw new Exception ("Error: falta escriure un titol d'espectacle\n");
@@ -70,11 +85,11 @@ public class Representacio {
 		this.titolEspectacle = titolEspectacle;
 	}
 
-	public TipusSessio getSessio() {
+	public String getSessio() {
 		return sessio;
 	}
 
-	public void setSessio(TipusSessio sessio) {
+	public void setSessio(String sessio) {
 		this.sessio = sessio;
 	}
 

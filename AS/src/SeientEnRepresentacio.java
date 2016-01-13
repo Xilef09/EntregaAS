@@ -1,23 +1,45 @@
-public class SeientEnRepresentacio {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="seientsenrepresentacio")
+public class SeientEnRepresentacio implements Serializable{
+	@Id
+	@Column(name="sessio")
+	private String sessio;
 	
-	public enum Estat {
-	    ocupat, lliure
-	}
-	
-	public enum TipusSessio {
-	    matí, tarda, nit
-	}
-	
-	private TipusSessio sessio;
+	@Id
+	@Column(name="titol")
 	private String titol;
-	private String nomLocal;
-	private String idEntrada;
-	private String nomLocalSeient;
-	private Integer fila;
-	private Integer columna;
-	private Estat estat;
 	
-	public SeientEnRepresentacio(Estat estat, TipusSessio sessio, String titol, String idEntrada, String nomLocal, String nomLocalSeient, Integer fila, Integer columna) throws Exception {
+	@Id
+	@Column(name="nomlocal")
+	private String nomLocal;
+	
+	@Column(name="identrada")
+	private String idEntrada;
+	
+	@Id
+	@Column(name="nomlocalseien")
+	private String nomLocalSeient;
+	
+	@Id
+	@Column(name="fila")
+	private Integer fila;
+	
+	@Id
+	@Column(name="columna")
+	private Integer columna;
+	
+	@Id
+	@Column(name="estat")
+	private Integer estat; // 0 libre 1 ocupado
+	
+	public SeientEnRepresentacio(Integer estat, String sessio, String titol, String idEntrada, String nomLocal, String nomLocalSeient, Integer fila, Integer columna) throws Exception {
 		super();
 		if (nomLocalSeient.isEmpty() || nomLocalSeient == null)
 			throw new Exception ("Error: el nom del local del seient es incorrecte\n");
@@ -43,19 +65,19 @@ public class SeientEnRepresentacio {
 		this.columna=columna;
 	}
 
-	public Estat getEstat() {
+	public Integer getEstat() {
 		return estat;
 	}
 
-	public void setEstat(Estat estat) {
+	public void setEstat(Integer estat) {
 		this.estat = estat;
 	}
 
-	public TipusSessio getSessio() {
+	public String getSessio() {
 		return sessio;
 	}
 
-	public void setSessio(TipusSessio sessio) {
+	public void setSessio(String sessio) {
 		this.sessio = sessio;
 	}
 
