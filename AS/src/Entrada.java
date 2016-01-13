@@ -16,8 +16,14 @@ public class Entrada {
 	private String titol;
 	private String nomLocal;
 
-	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, Date data, Float preu, TipusSessio sessio, String titol, String nomLocal) {
+	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, Date data, Float preu, TipusSessio sessio, String titol, String nomLocal) throws Exception {
 		super();
+		if (identificador.isEmpty() || identificador == null)
+			throw new Exception ("Error: l'identificador no es correcte\n");
+		if (nombreEspectadors<=0)
+			throw new Exception ("Error: el nombre d'espectadors ha de ser un enter mes gran que 0\n");
+		if (preu<=0)
+			throw new Exception ("Error: el preu ha de ser un enter mes gran que 0\n");
 		this.identificador = identificador;
 		this.dniClient = dniClient;
 		this.data = data;

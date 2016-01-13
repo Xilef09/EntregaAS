@@ -7,7 +7,10 @@ public class Sessio {
 	
 	private TipusSessio sessio;
 
-	public Sessio(TipusSessio sessio) {
+	public Sessio(TipusSessio sessio) throws Exception {
+		super();
+		if (sessio == null)
+			throw new Exception ("Error: ha fallat la sessio\n");
 		this.sessio=sessio;
 	}
 

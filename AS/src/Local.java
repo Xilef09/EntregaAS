@@ -9,8 +9,10 @@ public class Local {
 		super();
 	}
 
-	public Local(String nom, String adreca) {
+	public Local(String nom, String adreca) throws Exception {
 		super();
+		if (nom.isEmpty() || nom == null)
+			throw new Exception ("Error: falta escriure un nom\n");
 		this.nom = nom;
 		this.adreca = adreca;
 	}
