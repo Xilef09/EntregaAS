@@ -1,4 +1,4 @@
 
-public class ControladorEntradaDB implements ControladorEntrada{
+public class ControladorEntradaDB implements ControladorEntrada {
 
 }
