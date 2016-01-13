@@ -14,4 +14,7 @@ public class CtrlRepresentacions {
 
 	}
 	
+	public ArrayList<Espectacle> consultaEspectacles(){
+		//CtrlEspectacles ce = dataFactory.getCtrlEspecacles();
+	}	
 }
