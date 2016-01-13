@@ -18,5 +18,29 @@ public class CtrlDataFactory {
 	      }
 		return instance;
 	}
+	public ControladorRepresentacio getControladorRepresentacio(){
+		return controladorRepresentacio;
+	}
+	public ControladorEspectacle getControladorEspectacle(){
+		return controladorEspectacle;
+	}
+	public ControladorSessio getControladorSessio(){
+		return controladorSessio;
+	}
+	public ControladorSeients getControladorSeients(){
+		return controladorSeients;
+	}
+	public ControladorSeientsEnRepresentacio getControladorSeientsEnRepresentacio(){
+		return controladorSeientsEnRepresentacio;
+	}
+	public ControladorLocal getControladorLocal(){
+		return controladorLocal;
+	}
+	public ControladorEstrena getControladorEstrena(){
+		return controladorEstrena;
+	}
+	public ControladorEntrada getControladorEntrada(){
+		return controladorEntrada;
+	}
 	
 }

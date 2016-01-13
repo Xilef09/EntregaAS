@@ -1,4 +1,4 @@
 
-public class ControladorEspectacleDB {
+public class ControladorEspectacleDB implements ControladorEspectacle{
 
 }
