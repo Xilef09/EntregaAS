@@ -12,7 +12,6 @@ public class SeientEnRepresentacio implements Serializable{
 	@Column(name="sessio")
 	private String sessio;
 	
-	@Id
 	@Column(name="titol")
 	private String titol;
 	
