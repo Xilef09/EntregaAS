@@ -4,9 +4,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import Domini.Entrada;
+
+
+
 public class ControladorEntradaDB implements ControladorEntrada {
 	
-	public ArrayList<Entrada> all() {
+	public ArrayList<Entrada> all() throws Exception {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.getCurrentSession();
         session.beginTransaction();
@@ -16,7 +20,7 @@ public class ControladorEntradaDB implements ControladorEntrada {
 		return l;
 	}
 	
-	public boolean exist(String identificador) {
+	public Boolean exists(String identificador) throws Exception {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.getCurrentSession();
         session.beginTransaction();
@@ -26,7 +30,7 @@ public class ControladorEntradaDB implements ControladorEntrada {
 		return l == null;
 	}
 	
-	public Entrada get(String identificador) {
+	public Entrada get(String identificador) throws Exception {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.getCurrentSession();
         session.beginTransaction();

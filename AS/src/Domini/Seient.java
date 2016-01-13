@@ -1,3 +1,4 @@
+package Domini;
 import java.io.Serializable;
 
 import javax.persistence.Column;

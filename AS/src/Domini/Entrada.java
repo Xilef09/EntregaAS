@@ -1,3 +1,4 @@
+package Domini;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -28,9 +29,6 @@ public class Entrada {
 	@Column (name="sessio")
 	private String sessio;
 	
-	@Column (name="titol")
-	private String titol;
-	
 	@Column (name="nomlocal")
 	private String nomLocal;
 
@@ -41,10 +39,9 @@ public class Entrada {
 		this.preu = (float) 2.0;
 		this.nombreEspectadors = 2;	
 		this.sessio="a";
-		this.titol="d";
 		this.nomLocal="f";
 	}
-	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, String data, Float preu, String sessio, String titol, String nomLocal) throws Exception {
+	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, String data, Float preu, String sessio, String nomLocal) throws Exception {
 		super();
 		if (identificador.isEmpty() || identificador == null)
 			throw new Exception ("Error: l'identificador no es correcte\n");
@@ -58,7 +55,6 @@ public class Entrada {
 		this.preu = preu;
 		this.nombreEspectadors = nombreEspectadors;	
 		this.sessio=sessio;
-		this.titol=titol;
 		this.nomLocal=nomLocal;
 	}
 
@@ -108,14 +104,6 @@ public class Entrada {
 
 	public void setSessio(String sessio) {
 		this.sessio = sessio;
-	}
-
-	public String getTitol() {
-		return titol;
-	}
-
-	public void setTitol(String titol) {
-		this.titol = titol;
 	}
 
 	public String getNomLocal() {
