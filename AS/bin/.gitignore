@@ -4,3 +4,7 @@
 /Sessio.class
 /hibernate.cfg.out.xml
 /hibernate.cfg.xml
+/Entrada$TipusSessio.class
+/SeientEnRepresentacio$TipusSessio.class
+/Entrada.hbm.xml
+/Estrena.hbm.xml

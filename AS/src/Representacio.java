@@ -3,7 +3,7 @@ import java.util.Date;
 public class Representacio {
 	
 	public enum TipusSessio {
-	    matí, tarda, nit
+	    mati, tarda, nit
 	}
 	
 	private TipusSessio sessio;

@@ -9,11 +9,10 @@ public class Entrada {
 	private Float preu;
 	
 	public enum TipusSessio {
-	    matí, tarda, nit
+	    mati, tarda, nit
 	}
 	
 	private TipusSessio sessio;
-	
 	private String titol;
 	private String nomLocal;
 

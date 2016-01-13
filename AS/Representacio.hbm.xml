@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-ene-2016 22:18:31 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Representacio" table="REPRESENTACIO">
+        <id name="sessio" type="org.hibernate.type.EnumType">
+            <column name="SESSIO" />
+            <generator class="assigned" />
+        </id>
+        <property name="titolEspectacle" type="java.lang.String">
+            <column name="TITOLESPECTACLE" />
+        </property>
+        <property name="nomLocal" type="java.lang.String">
+            <column name="NOMLOCAL" />
+        </property>
+        <property name="preu" type="java.lang.Float">
+            <column name="PREU" />
+        </property>
+        <property name="data" type="java.util.Date">
+            <column name="DATA" />
+        </property>
+        <property name="nombreSeientsLliures" type="java.lang.Integer">
+            <column name="NOMBRESEIENTSLLIURES" />
+        </property>
+    </class>
+</hibernate-mapping>
