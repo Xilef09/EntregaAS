@@ -1,8 +1,8 @@
 package Domini;
 
-public class CtrlRepresentacio {
+public class CtrlComprarEntrada {
 
-	public CtrlRepresentacio() {
+	public CtrlComprarEntrada() {
 		// TODO Auto-generated constructor stub
 	}
 
