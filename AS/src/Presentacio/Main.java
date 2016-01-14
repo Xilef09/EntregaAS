@@ -6,8 +6,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import Domini.Entrada;
 import Domini.Espectacle;
 import Domini.Estrena;
+import Domini.Local;
+import Domini.Representacio;
+import Domini.Seient;
+import Domini.SeientEnRepresentacio;
+import Domini.Sessio;
 
 
 public class Main {
@@ -17,28 +23,47 @@ public class Main {
 	private static Session session;
 
 	private static void creaEspec() throws Exception{
-		System.out.println("entrooooooooooo");
-		/*SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		/*System.out.println("entrooooooooooo");
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		session = factory.openSession();
 		
-		Espectacle e = new Espectacle("Espe1",10);
+		SeientEnRepresentacio s1 = new SeientEnRepresentacio();
+		s1.setSessio("nit");
+		s1.setNomLocal("Local1");
+		s1.setNomLocalSeient("Local1");
+		s1.setFila(1);
+		s1.setColumna(1);
+		s1.setEstat(0);
 		session.beginTransaction();
-		session.save(e);
+		session.save(s1);
 		session.getTransaction().commit();
 		
-		e = new Espectacle("Espe2",10);
+		s1 = new SeientEnRepresentacio();
+		s1.setSessio("nit");
+		s1.setNomLocal("Local1");
+		s1.setNomLocalSeient("Local1");
+		s1.setFila(1);
+		s1.setColumna(2);
+		s1.setEstat(0);
 		session.beginTransaction();
-		session.save(e);
+		session.save(s1);
 		session.getTransaction().commit();
 		
-		e = new Espectacle("Espe3",10);
+		s1 = new SeientEnRepresentacio();
+		s1.setSessio("nit");
+		s1.setNomLocal("Local1");
+		s1.setNomLocalSeient("Local1");
+		s1.setFila(1);
+		s1.setColumna(3);
+		s1.setEstat(0);
 		session.beginTransaction();
-		session.save(e);
+		session.save(s1);
 		session.getTransaction().commit();
+	
 		
 		session.close();
-		factory.close();*/
-		
+		factory.close();
+		System.out.println("surtooooooooooo");*/
 	}
 	//-------------------------------------------------------
 	

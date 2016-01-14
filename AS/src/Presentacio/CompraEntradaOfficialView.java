@@ -124,7 +124,10 @@ public class CompraEntradaOfficialView {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				try {
-					ctrlPresentacion.PrOkobteRepresentacions((String)comboBox.getSelectedItem(), textField.getText());
+					//llegim els dos parametres titol i data
+					String titol = comboBox.getSelectedItem().toString();
+				    String data = textField.getText();
+					ctrlPresentacion.PrOkobteRepresentacions(titol, data);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					lblNewLabel.setText("No hay Representaciones para Esa Data y ese Espectaculo");
