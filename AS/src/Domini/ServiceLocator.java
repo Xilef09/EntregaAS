@@ -15,6 +15,8 @@ public class ServiceLocator {
 	
 	public Object find(String name){
 		if (name.equals("CurrentConvertorService")) return new CurrentConvertorService();
+		if (name.equals("BankService")) return new CurrentConvertorService();
+		if (name.equals("CurrentConvertorService")) return new CurrentConvertorService();
 		return null;
 	}
 }
