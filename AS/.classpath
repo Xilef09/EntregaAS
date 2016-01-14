@@ -6,18 +6,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/postgres"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/tuple"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/javatuples-1.2/lib/javatuples-1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/jboss-logging-3.3.0.Final.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/javassist-3.18.1-GA.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/jandex-1.2.2.Final.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/hibernate-core-5.0.2.Final.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/geronimo-jta_1.1_spec-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/hibernate-commons-annotations-5.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Downloads/Hibernate/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="/Users/GerardDuch/Desktop/postgresql-9.4-1204.jdbc4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Sin nombre/Desktop/javatuples-1.2/lib/javatuples-1.2.jar"/>
-	<classpathentry kind="lib" path="forms-1.3.0.jar" sourcepath="forms-1.3.0-src.zip"/>
+	<classpathentry kind="lib" path="/Prop/forms-1.3.0.jar" sourcepath="/PruebaInterfaz/forms-1.3.0-src.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
