@@ -11,11 +11,13 @@ public class ControladorEspectacle {
 		ctrlDataFactory = CtrlDataFactory.getInstance();
 	}
 
-	public Espectacle getEspectacle(String nom){
-		return null;
+	public Espectacle getEspectacle(String nom) throws Exception{
+		Persistencia.ControladorEspectacle ctrEspectacle = ctrlDataFactory.getControladorEspectacle();
+		return ctrEspectacle.get(nom);
 	}
 	
 	public ArrayList<Espectacle> getAll(){
-		return null;
+		Persistencia.ControladorEspectacle ctrEspectacle = ctrlDataFactory.getControladorEspectacle();
+		return ctrEspectacle.all();
 	}
 }
