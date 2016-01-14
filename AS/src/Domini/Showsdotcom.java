@@ -1,7 +1,14 @@
 package Domini;
 
+import org.javatuples.Pair;
+
 public class Showsdotcom {
 	private static Showsdotcom instance= null;
+	private Integer codiBanc;
+	private String numeroCompte;
+	private Float comissio;
+	private String moneda; //eur usd gbp
+	private Pair<String,String> canvis;
 	
 	private Showsdotcom(){
 	}
@@ -11,6 +18,13 @@ public class Showsdotcom {
 	         instance = new Showsdotcom();
 	      }
 		return instance;
+	}
+
+	public Float getComisio() {
+		return comissio;
+	}
+	public Pair<String,String> getCanvis(){
+		return canvis;
 	}
 	
 }
