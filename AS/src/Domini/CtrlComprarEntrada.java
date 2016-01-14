@@ -77,17 +77,15 @@ public class CtrlComprarEntrada {
 		}
 		Integer nSeients = seients.size();
 		Entrada e = new Entrada(id,dni,nSeients,dataActual,preuTotal); //s'ha d'afegir a la BD????
-		
-		//guillem repassa
-		ControladorRepresentacio ctrlR = myFactory.getCtrlRepresentacio();
-		Representacio rep = ctrlR.getRepresentacio(nomLocal, sessio);
+		ControladorRepresentacio cr = myFactory.getCtrlRepresentacio();
+		Representacio rep = cr.getRepresentacio(nomLocal, sessio);
 		e.setNomLocal(rep.getNomLocal());
 		e.setSessio(rep.getSessio());
 		for (Pair<Integer, Integer> s : seients) {
-			ControladorSeientsEnRepresentacio ctrlcs = myFactory.getCtrlSeientsEnRepresentacio();
-			SeientEnRepresentacio r = ctrlcs.getSeientEnRepresentacio(null,null,null,null,null,null);//atributs?
+			ControladorSeientsEnRepresentacio ctrlsr = myFactory.getCtrlSeientsEnRepresentacio();
+			SeientEnRepresentacio r = ctrlsr.getSeientEnRepresentacio(rep.getSessio(),rep.getNomLocal(), this.nomLocal,s.getValue0(),s.getValue1(),id);//atributs?
 			r.setEstat(1);
-			e.asignarSeient;//kljadfnscvxjfdsklndknvfdj
+			e.asignarSeient(r);
 		}
 		
 	}

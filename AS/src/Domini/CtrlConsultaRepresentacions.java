@@ -9,7 +9,7 @@ public class CtrlConsultaRepresentacions {
 	
 	
 	public ArrayList<String> consultaEspectacles() throws Exception{
-		ControladorEspectacle ce = myFactory.getCtrEspectacle();
+		ControladorEspectacle ce = myFactory.getCtrlEspectacle();
 		ArrayList<Espectacle> es = ce.getAll();
 		if(es.size()==0) throw new Exception("No hi ha espectacles");
 		ArrayList<String> result = new ArrayList<>();
@@ -19,8 +19,8 @@ public class CtrlConsultaRepresentacions {
 		return result;
 	}
 	
-	public ArrayList <Quintet<String, String, Integer, Boolean, Float>> consultaRepresentacions(String titol, String date){
-		ControladorEspectacle ce = myFactory.getCtrEspectacle();
+	public ArrayList <Quintet<String, String, Integer, Boolean, Float>> consultaRepresentacions(String titol, String date) throws Exception{
+		ControladorEspectacle ce = myFactory.getCtrlEspectacle();
 		Espectacle espectacle = ce.getEspectacle(titol);
 		return espectacle.consultaRepresentacions(date);
 	}

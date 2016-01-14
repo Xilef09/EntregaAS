@@ -8,13 +8,13 @@ public class CtrlConsultaOcupacio {
 	private FactoryControladors myFactory = FactoryControladors.getInstance();
 	
 	public ArrayList<Pair<Integer,Integer>> consultaOcupacio(String nomLocal, String sessio, Integer nombEspectadors) throws Exception{
-		ControladorRepresentacio ctrConsultaRep = myFactory.getCtrRepresentacio();
+		ControladorRepresentacio ctrConsultaRep = myFactory.getCtrlRepresentacio();
 		Representacio r = ctrConsultaRep.getRepresentacio(nomLocal, sessio);
 		r.hiHaEspai(nombEspectadors);
 		return r.consultaOcupacio("lliure");
 	}
 	public ArrayList<Septet<String,String,String,String,Integer,Boolean,Float>> totesRepresentacions() throws Exception{
-		ControladorRepresentacio cr = myFactory.getCtrRepresentacio();
+		ControladorRepresentacio cr = myFactory.getCtrlRepresentacio();
 		ArrayList<Representacio> representacions = cr.getAll();
 		if(representacions.isEmpty()) throw new Exception ("No hi ha Representacions");
 		ArrayList<Septet<String,String,String, String, Integer, Boolean, Float>> ll = new ArrayList<>();

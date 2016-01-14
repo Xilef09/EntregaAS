@@ -120,7 +120,8 @@ public class Representacio implements Serializable {
 
 	public Pair<String, String> obteMesDades() {
 		return Pair.with(getTitolEspectacle(), getData());
-
+	}
+	
 	public ArrayList<Pair<Integer,Integer>> consultaOcupacio(String estat) {
 		ArrayList<Pair<Integer,Integer>> ll = new ArrayList<Pair<Integer,Integer>>();
 		for (SeientEnRepresentacio s : llistaSeientEnRep){
