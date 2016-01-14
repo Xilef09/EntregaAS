@@ -5,7 +5,7 @@ public class FactoryCtrlCasDus {
 	private CtrlConsultaOcupacio ctrlConsultaOcupacio = new CtrlConsultaOcupacio();
 	private CtrlConsultaRepresentacions ctrlConsultaRepresentacions = new CtrlConsultaRepresentacions();
 	
-	protected FactoryCtrlCasDus(){
+	private FactoryCtrlCasDus(){
 	}
 	
 	public static FactoryCtrlCasDus getInstance(){
