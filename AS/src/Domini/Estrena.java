@@ -15,9 +15,7 @@ public class Estrena extends Representacio{
 	private Integer recarrec;
 	
 	public Estrena() {
-		this.setNomLocal("l1");
-		this.setSessio("s1");
-		this.recarrec = 2;
+
 	}
 	
 	public Estrena(Integer recarrec, Float preu, Date data, String sessio, String nomLocal, String titolEspectacle, Integer numSeientsLliures) throws Exception {

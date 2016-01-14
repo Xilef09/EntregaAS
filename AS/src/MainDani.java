@@ -10,12 +10,13 @@ import Domini.Local;
 import Domini.Representacio;
 import Domini.Seient;
 import Domini.Sessio;
+import Persistencia.ControladorRepresentacioDB;
+import Persistencia.*;
+import Domini.*;
 
 
 public class MainDani {
 	public static void main(String[] args) throws Exception {
-		//Representacio x = new Representacio();
-		//Sessio z = new Sessio("s1");
 		//Local l = new Local("l1", "a1");
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.getCurrentSession();

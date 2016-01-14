@@ -32,12 +32,7 @@ public class Representacio implements Serializable {
 	private Integer nombreSeientsLliures;
 	
 	public Representacio() {
-		this.preu = (float) 2;
-		this.data = new Date();
-		this.nombreSeientsLliures = 1;		
-		this.sessio = "2";		
-		this.titolEspectacle = "t1";		
-		this.nomLocal = "l1";	
+			
 	}
 	public Representacio(Float preu, Date data, Integer nombreSeientsLliures, String sessio, String titolEspectacle, String nomLocal) throws Exception {
 		super();
