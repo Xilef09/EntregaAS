@@ -14,9 +14,17 @@ public class CtrlComprarEntrada {
 	private Integer nombEspectadors;
 	private ArrayList<Pair<Integer,Integer>> seients;
 	private Float preuTotal;
+	private FactoryControladors myFactory = FactoryControladors.getInstance();
+
 	
-	public ArrayList<Quintet<String,String,Integer,Boolean,Float>> obteRepresentacions(String titol, String date){
-		return null; //TO DO
+	public ArrayList<Quintet<String,String,Integer,Boolean,Float>> obteRepresentacions(String titol, String date) throws Exception{
+		CtrlConsultaRepresentacions ctrConsultaRep = myFactory.getCtrlConsultaRepresentacions();
+		ArrayList<Quintet<String,String,Integer,Boolean,Float>> ll = ctrConsultaRep.consultaRepresentacions(titol,date);
+		if (ll==null || ll.isEmpty())
+			throw new Exception ("Error: noHiHaRepresentacions\n");
+		this.titol=titol;
+		this.date=date;
+		return ll;
 	}
 	public ArrayList<Pair> obteOcupacio(String nomLocal, String sessio, Integer nombEspectadors){
 		return null; //TO DO 
