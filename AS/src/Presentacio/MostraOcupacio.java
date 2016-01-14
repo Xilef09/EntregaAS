@@ -113,7 +113,6 @@ public class MostraOcupacio {
 		gbc_lblNewLabel.gridx = 0;
 		gbc_lblNewLabel.gridy = 6;
 		contentPane.add(lblNewLabel, gbc_lblNewLabel);
-		
 	}
 	
 	public void mostra() {
