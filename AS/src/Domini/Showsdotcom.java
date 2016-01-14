@@ -26,5 +26,9 @@ public class Showsdotcom {
 	public Pair<String,String> getCanvis(){
 		return canvis;
 	}
+
+	public String getMoneda() {
+		return moneda;
+	}
 	
 }
