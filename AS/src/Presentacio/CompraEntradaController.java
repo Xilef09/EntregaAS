@@ -21,7 +21,9 @@ public class CompraEntradaController {
 	}
 	
 	void PrOkobteRepresentacions(String titulo, String data) {
-		
+		//Obtener representaciones 
+		mostraRepre = new MostraRepresentacions(this);
+		mostraRepre.mostra();
 	}
 	
 	void PrObteOcupacio(String nomLocal, String sessio, Integer nombEspectadors) {
