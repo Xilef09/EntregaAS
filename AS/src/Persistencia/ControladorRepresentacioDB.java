@@ -1,3 +1,4 @@
+package Persistencia;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class ControladorRepresentacioDB implements ControladorRepresentacio{
 		Session session = factory.openSession();
 		session.beginTransaction();
 		List<Representacio> l = session.createQuery("from Representacio where sessio = :ses and "
-				+ "nomlocal = :nl").setParameter("ses", sessio).setParameter("nomlocal", nomlocal).list();
+				+ "nomlocal = :nl").setParameter("ses", sessio).setParameter("nl", nomlocal).list();
 		session.getTransaction().commit();
 		factory.close();
 		if (!l.isEmpty()) return l.get(0);
@@ -33,7 +34,7 @@ public class ControladorRepresentacioDB implements ControladorRepresentacio{
 		Session session = factory.openSession();
 		session.beginTransaction();
 		List<Representacio> l = session.createQuery("from Representacio where sessio = :ses and "
-				+ "nomlocal = :nl").setParameter("ses", sessio).setParameter("nomlocal", nomLocal).list();
+				+ "nomlocal = :nl").setParameter("ses", sessio).setParameter("nl", nomLocal).list();
 		session.getTransaction().commit();
 		factory.close();
 		return !l.isEmpty();

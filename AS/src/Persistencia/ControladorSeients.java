@@ -1,3 +1,4 @@
+package Persistencia;
 import java.util.ArrayList;
 
 import Domini.Seient;

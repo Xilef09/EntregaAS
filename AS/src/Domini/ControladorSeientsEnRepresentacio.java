@@ -1,12 +1,19 @@
 package Domini;
 
+import Persistencia.*;
+import Persistencia.CtrlDataFactory;
+
 public class ControladorSeientsEnRepresentacio {
+
+	private CtrlDataFactory ctrlDataFactory;
 
 	public ControladorSeientsEnRepresentacio() {
 		// TODO Auto-generated constructor stub
+		ctrlDataFactory = CtrlDataFactory.getInstance();
 	}
 
-	public Seient getSeientEnRepresentacio(String titol, String nomLocal, String sessio, Integer fila, Integer columna){
-		
+	public SeientEnRepresentacio getSeientEnRepresentacio(String nomSessio, String nomLocal,String nomLocalSeient, int fila, int columna, String identificador) throws Exception{
+		Persistencia.ControladorSeientsEnRepresentacio ctrSeientEnRep = ctrlDataFactory.getControladorSeientsEnRepresentacio();
+		return ctrSeientEnRep.get(nomSessio, nomLocal, nomLocalSeient, fila, columna, identificador);
 	}
 }
