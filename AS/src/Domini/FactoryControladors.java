@@ -2,16 +2,24 @@ package Domini;
 
 public class FactoryControladors {
 
-	private static FactoryControladors instance = null;
+	private static FactoryControladors instance;
 	
-	private ControladorRepresentacio ctrlRepresentacio = new ControladorRepresentacio();
-	private ControladorEspectacle ctrlEspectacle = new ControladorEspectacle();
-	private ControladorEntrada ctrlEntrada = new ControladorEntrada();
-	private ControladorSeientsEnRepresentacio ctrlSeientsEnRepresentacio = new ControladorSeientsEnRepresentacio();
-	private CtrlConsultaOcupacio ctrlConsultaOcupacio = new CtrlConsultaOcupacio();
-	private CtrlConsultaRepresentacions ctrlConsultaRepresentacions = new CtrlConsultaRepresentacions();
+	private ControladorRepresentacio ctrlRepresentacio;
+	private ControladorEspectacle ctrlEspectacle;
+	private ControladorEntrada ctrlEntrada;
+	private ControladorSeientsEnRepresentacio ctrlSeientsEnRepresentacio;
+	private CtrlConsultaOcupacio ctrlConsultaOcupacio;
+	private CtrlConsultaRepresentacions ctrlConsultaRepresentacions;
 
-	protected FactoryControladors() {}
+	private FactoryControladors() {
+		ctrlRepresentacio = new ControladorRepresentacio();
+		ctrlEspectacle = new ControladorEspectacle();
+		ctrlEntrada = new ControladorEntrada();
+		ctrlSeientsEnRepresentacio = new ControladorSeientsEnRepresentacio();
+		ctrlConsultaOcupacio = new CtrlConsultaOcupacio();
+		ctrlConsultaRepresentacions = new CtrlConsultaRepresentacions();
+
+	}
 
 	public static FactoryControladors getInstance() {
         if (instance == null) {

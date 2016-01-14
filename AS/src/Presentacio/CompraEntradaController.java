@@ -15,11 +15,12 @@ public class CompraEntradaController {
 	private MostraOcupacio mostraOcupa;
 	
 	public CompraEntradaController() {
-		
+		compEntrCU = new CompraEntradaUseCaseController();
 	}
 	
 	void prObteEspectacles() {
-		ArrayList<String> espectacles = compEntrCU.obteEspectacles();
+		ArrayList<String> espectacles = new ArrayList<String>(); 
+		espectacles = compEntrCU.obteEspectacles();
 		// Enviar para que se muestre por pantalla el array, en caso de que este vacio mostrar mensaje
 		// de error correspondiete
 		comprEntrOV = new CompraEntradaOfficialView(this);
