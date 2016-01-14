@@ -6,6 +6,7 @@ import org.javatuples.Pair;
 import org.javatuples.Quintet;
 
 import Domini.ControladorEspectacle;
+import Domini.CtrlConsultaRepresentacions;
 import Domini.Espectacle;
 import Domini.FactoryControladors;
 
@@ -19,9 +20,10 @@ public class CompraEntradaUseCaseController {
 	private Float preuTotal;
 	
 	
-	public ArrayList<Quintet<String, String, Integer, Boolean, Float>> 
-		ObteRepresentacions (String titol, String data) {
-		
+	public ArrayList<Quintet<String, String, Integer, Boolean, Float>> ObteRepresentacions (String titol, String data) throws Exception {
+		FactoryControladors myFactoryControlador = Domini.FactoryControladors.getInstance();
+		CtrlConsultaRepresentacions ctrRep = myFactoryControlador.getCtrlConsultaRepresentacions();
+		return ctrRep.consultaRepresentacions(titol,data);
 	}
 	
 	public ArrayList<Pair<Integer, Integer>> obteOcupacio(String nomLocal, String sessio, 

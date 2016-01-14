@@ -28,6 +28,7 @@ import javax.swing.JList;
 
 public class MostraRepresentacions {
 
+	private JList list;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JFrame frame;
@@ -62,7 +63,7 @@ public class MostraRepresentacions {
 		gbc_lblNewLabel_1.gridy = 0;
 		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		JList list = new JList();
+		list = new JList();
 		GridBagConstraints gbc_list = new GridBagConstraints();
 		gbc_list.gridwidth = 3;
 		gbc_list.gridheight = 5;
@@ -131,6 +132,19 @@ public class MostraRepresentacions {
 	public void mostra() {
 		// TODO Auto-generated method stub
 		frame.setVisible(true);
+	}
+
+	public void asignaRepresentacions(ArrayList<String> informacio) {
+		String llista[] = informacio.stream().toArray(String[]::new);
+		list = new JList(llista);
+		GridBagConstraints gbc_list = new GridBagConstraints();
+		gbc_list.gridwidth = 3;
+		gbc_list.gridheight = 5;
+		gbc_list.insets = new Insets(0, 0, 5, 5);
+		gbc_list.fill = GridBagConstraints.BOTH;
+		gbc_list.gridx = 1;
+		gbc_list.gridy = 1;
+		contentPane.add(list, gbc_list);
 	}
 
 }

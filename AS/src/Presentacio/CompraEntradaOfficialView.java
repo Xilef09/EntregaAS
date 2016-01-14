@@ -45,6 +45,7 @@ public class CompraEntradaOfficialView {
 	public CompraEntradaOfficialView(CompraEntradaController ce) {
 		ctrlPresentacion = ce;
 		inicializa();
+		
 	}
 	
 	private void inicializa() {
@@ -119,7 +120,12 @@ public class CompraEntradaOfficialView {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				ctrlPresentacion.PrOkobteRepresentacions(null, null); // CAMBIAR
+				try {
+					ctrlPresentacion.PrOkobteRepresentacions(null, null);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} // CAMBIAR
 			}
 			
 		});
