@@ -1,9 +1,14 @@
 package Domini;
 
-public class ConversorAdapter {
+public class ConversorAdapter implements iConversorAdapter{
 
 	public ConversorAdapter() {
-		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public float obteConversionRate(String divisa, String moneda) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
