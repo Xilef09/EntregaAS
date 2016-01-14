@@ -10,6 +10,7 @@ import javax.persistence.Table;
 
 import org.javatuples.Pair;
 import org.javatuples.Quintet;
+import org.javatuples.Septet;
 
 @Entity
 @Table (name="representacio")
@@ -116,6 +117,10 @@ public class Representacio implements Serializable {
 		return false;
 	}
 
+
+	public Pair<String, String> obteMesDades() {
+		return Pair.with(getTitolEspectacle(), getData());
+
 	public ArrayList<Pair<Integer,Integer>> consultaOcupacio(String estat) {
 		ArrayList<Pair<Integer,Integer>> ll = new ArrayList<Pair<Integer,Integer>>();
 		for (SeientEnRepresentacio s : llistaSeientEnRep){
@@ -126,6 +131,7 @@ public class Representacio implements Serializable {
 			if (estat.equals(estatSeient)) ll.add(s.obteUbicacio());
 		}
 		return ll;
+
 	}
 
 }

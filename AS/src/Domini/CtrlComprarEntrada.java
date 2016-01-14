@@ -14,8 +14,9 @@ public class CtrlComprarEntrada {
 	private Integer nombEspectadors;
 	private ArrayList<Pair<Integer,Integer>> seients;
 	private Float preuTotal;
+	
 	private FactoryControladors myFactory = FactoryControladors.getInstance();
-
+	private FactoryCtrlCasDus myfactoryCU = FactoryCtrlCasDus.getInstance();
 	
 	public ArrayList<Quintet<String,String,Integer,Boolean,Float>> obteRepresentacions(String titol, String date) throws Exception{
 		CtrlConsultaRepresentacions ctrConsultaRep = myFactory.getCtrlConsultaRepresentacions();
@@ -26,8 +27,13 @@ public class CtrlComprarEntrada {
 		this.date=date;
 		return ll;
 	}
-	public ArrayList<Pair> obteOcupacio(String nomLocal, String sessio, Integer nombEspectadors){
-		return null; //TO DO 
+	public ArrayList<Pair<Integer,Integer>> obteOcupacio(String nomLocal, String sessio, Integer nombEspectadors) throws Exception{
+		CtrlConsultaOcupacio co = myfactoryCU.getCtrlConsultaOcupacio();
+		ArrayList<Pair<Integer,Integer>> result = co.consultaOcupacio(nomLocal, sessio, nombEspectadors);
+		this.nomLocal=nomLocal;
+		this.sessio = sessio;
+		this.nombEspectadors= nombEspectadors;
+		return result;
 	}
 	public Pair<Float,ArrayList<String>> seleccionarSeients (ArrayList<Pair> seients){
 		return null; //TO DO
@@ -38,8 +44,9 @@ public class CtrlComprarEntrada {
 	public void pagament (String dni, Integer codiB, String numCompte){
 		//TO DO
 	}
-	public ArrayList<String> obteEspectacles(){
-		return null; //TO DO
+	public ArrayList<String> obteEspectacles() throws Exception{
+		CtrlConsultaRepresentacions cr = myfactory.getCtrlConsultaRepresentacions();
+		return cr.consultaEspectacles();
 	}
 	
 
