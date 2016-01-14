@@ -62,6 +62,7 @@ public class Main2 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		ArrayList<Espectacle> al = ce.all();
 		for (int i=0; i< al.size();++i) {
 			System.out.println(al.get(i).getTitol());
