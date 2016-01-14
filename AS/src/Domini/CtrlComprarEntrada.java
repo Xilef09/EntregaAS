@@ -60,5 +60,6 @@ public class CtrlComprarEntrada {
 		return cr.consultaEspectacles();
 	}
 	
+	
 
 }
