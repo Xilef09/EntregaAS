@@ -35,7 +35,6 @@ public class CompraEntradaController {
 		ArrayList<Quintet<String, String, Integer, Boolean, Float>> lr = compEntrCU.ObteRepresentacions(titulo, data);
 		
 		ArrayList<String> informacio = new ArrayList<String>();
-		
 		for (Quintet<String, String, Integer, Boolean, Float> qr: lr) {
 			String info = ""+qr.getValue0()+","+qr.getValue1()+","+qr.getValue2()+","+qr.getValue3()+","+qr.getValue4();
 			informacio.add(info); //informacio te un string per cada representacio, es posa directament al box
@@ -73,6 +72,10 @@ public class CompraEntradaController {
 	
 	void PrCancela() {
 		
+	}
+
+	public static void main(String[] args) {
+		lblNewLabel = new JLabel("Sin errores");
 	}
 	
 }

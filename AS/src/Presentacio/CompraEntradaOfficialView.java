@@ -37,6 +37,7 @@ public class CompraEntradaOfficialView {
 	private static CompraEntradaController ctrlPresentacion;
 	private JTextField textField;
 	private JFrame frame;
+	private JLabel lblNewLabel;
 	private JComboBox<String> comboBox;
 	
 	/**
@@ -50,6 +51,7 @@ public class CompraEntradaOfficialView {
 	
 	private void inicializa() {
 		frame = new JFrame();
+		lblNewLabel = new JLabel("Sin errores");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -142,7 +144,6 @@ public class CompraEntradaOfficialView {
 		});
 		contentPane.add(cancelButton, "8, 12, left, top");
 		
-		JLabel lblNewLabel = new JLabel("Sin errores");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel, "2, 16, 10, 1");
 		
@@ -153,6 +154,8 @@ public class CompraEntradaOfficialView {
 	}
 	
 	public void assignaEspectacles(ArrayList<String> listTitolsEspec){
+		if(listTitolsEspec.size()==0)
+			lblNewLabel.setText("No hi ha cap espectacle");
 		//System.out.println(listTitolsEspec.get(0));
 		//System.out.println(listTitolsEspec.get(1));
 		//System.out.println(listTitolsEspec.get(2));

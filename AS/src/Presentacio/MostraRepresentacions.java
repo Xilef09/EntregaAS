@@ -31,6 +31,7 @@ public class MostraRepresentacions {
 	private JList list;
 	private JPanel contentPane;
 	private JTextField textField;
+	private JLabel lblNewLabel;
 	private JFrame frame;
 	private static CompraEntradaController ctrlPresentacion;
 
@@ -44,6 +45,7 @@ public class MostraRepresentacions {
 	
 	private void inicializa() {
 		frame = new JFrame();
+		lblNewLabel = new JLabel("Sin errores");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -115,12 +117,10 @@ public class MostraRepresentacions {
 		btnCancel.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 			}
 		});
 		
-		JLabel lblNewLabel = new JLabel("Sin errores");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.gridheight = 2;
 		gbc_lblNewLabel.gridwidth = 8;
@@ -130,11 +130,11 @@ public class MostraRepresentacions {
 	}
 
 	public void mostra() {
-		// TODO Auto-generated method stub
 		frame.setVisible(true);
 	}
 
 	public void asignaRepresentacions(ArrayList<String> informacio) {
+		if (informacio.size()==0) lblNewLabel.setText("No hi ha representacions per l'espectacle i data");
 		String llista[] = informacio.stream().toArray(String[]::new);
 		list = new JList(llista);
 		GridBagConstraints gbc_list = new GridBagConstraints();
