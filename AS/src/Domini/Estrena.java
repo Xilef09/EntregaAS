@@ -1,11 +1,22 @@
 package Domini;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "estrena")
 public class Estrena extends Representacio{
 
+	
+	@Column (name="recarrec")
 	private Integer recarrec;
 	
 	public Estrena() {
+		this.setNomLocal("l1");
+		this.setSessio("s1");
 		this.recarrec = 2;
 	}
 	
