@@ -28,38 +28,28 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 
-public class CompraEntradaOfficialView extends JFrame {
+public class CompraEntradaOfficialView {
 
 	private JPanel contentPane;
-	private static CompraEntradaOfficialView frame;
+	private static CompraEntradaController ctrlPresentacion;
 	private JTextField textField;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					frame = new CompraEntradaOfficialView();
-					inicializa();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	private JFrame frame;
+	
 	/**
 	 * Create the frame.
 	 */
-	public CompraEntradaOfficialView() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+	public CompraEntradaOfficialView(CompraEntradaController ce) {
+		ctrlPresentacion = ce;
+		inicializa();
+	}
+	
+	private void inicializa() {
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		frame.setContentPane(contentPane);
 		contentPane.setLayout(new FormLayout(new ColumnSpec[] {
 				ColumnSpec.decode("89px"),
 				ColumnSpec.decode("56px"),
@@ -125,12 +115,8 @@ public class CompraEntradaOfficialView extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				MostraRepresentacions mr = new MostraRepresentacions();
-				System.out.println("HOLAAAA");
-				frame.getContentPane().removeAll();
-				frame.revalidate();
-	            frame.repaint();
-				frame.setVisible(true);
+				MostraRepresentacions mr = new MostraRepresentacions(ctrlPresentacion);
+				mr.setVisible(true);
 			}
 			
 		});
@@ -154,8 +140,8 @@ public class CompraEntradaOfficialView extends JFrame {
 		
 	}
 	
-	private static void inicializa() {
-		
+	public void mostra() {
+		frame.setVisible(true);
 	}
 
 }
