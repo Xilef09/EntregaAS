@@ -18,9 +18,9 @@ public class Espectacle {
 	private String titol;
 	@Column(name = "participants")
 	private Integer participants;
-	private ArrayList<Representacio> representacions;
+	private ArrayList<Representacio> representacions = new ArrayList<>();
+	
 	public Espectacle() {
-		
 	}
 	
 	/**
@@ -35,6 +35,7 @@ public class Espectacle {
 			throw new Exception ("Error: El numero de participants ha de ser un enter major que 0\n");
 		this.titol = titol;
 		this.participants = participants;
+	
 	}
 
 	public String getTitol() {
@@ -54,6 +55,7 @@ public class Espectacle {
 	}
 
 	public ArrayList<Quintet<String, String, Integer, Boolean, Float>> consultaRepresentacions(String date) {
+		System.out.println("HOOOOOOOOOOOOOOOOOOOOOOO" + " " + representacions.size());
 		ArrayList<Quintet<String,String,Integer,Boolean,Float>> r = new ArrayList();
 		for(int i=0;i<representacions.size();++i){
 			if(date==representacions.get(i).getData()) 
@@ -61,5 +63,9 @@ public class Espectacle {
 		}
 		return r;
 	}
+	
+	public void setRepresentacions(ArrayList<Representacio> myArray) {
+		representacions = myArray;
+		}
 
 }

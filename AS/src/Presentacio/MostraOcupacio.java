@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.SpinnerListModel;
 import javax.swing.border.EmptyBorder;
 
@@ -20,6 +21,8 @@ import javax.swing.JSpinner;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 
+import org.javatuples.Pair;
+
 import com.jgoodies.forms.factories.FormFactory;
 
 import java.awt.event.ActionEvent;
@@ -27,6 +30,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 
 
 public class MostraOcupacio {
@@ -34,6 +38,7 @@ public class MostraOcupacio {
 	private JPanel contentPane;
 	private JFrame frame;
 	private JTextField textField;
+	JList list;
 	private static CompraEntradaController ctrlPresentacion;
 	
 	/**
@@ -66,7 +71,8 @@ public class MostraOcupacio {
 		gbc_lblNewLabel_1.gridy = 0;
 		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		JList list = new JList();
+		list = new JList();
+		list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		GridBagConstraints gbc_list = new GridBagConstraints();
 		gbc_list.gridwidth = 3;
 		gbc_list.gridheight = 5;
@@ -75,6 +81,14 @@ public class MostraOcupacio {
 		gbc_list.gridx = 1;
 		gbc_list.gridy = 1;
 		contentPane.add(list, gbc_list);
+		
+		JLabel lblNewLabel = new JLabel("Sin errores");
+		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+		gbc_lblNewLabel.gridheight = 2;
+		gbc_lblNewLabel.gridwidth = 8;
+		gbc_lblNewLabel.gridx = 0;
+		gbc_lblNewLabel.gridy = 6;
+		contentPane.add(lblNewLabel, gbc_lblNewLabel);
 		
 		JButton btnOk = new JButton("OK");
 		GridBagConstraints gbc_btnOk = new GridBagConstraints();
@@ -87,7 +101,19 @@ public class MostraOcupacio {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				ctrlPresentacion.PrOkSeleccionarSeients(null); //Cambiar
+				ArrayList<Pair<Integer,Integer>> aux = new ArrayList<Pair<Integer,Integer>> ();
+				ArrayList<String> x = (ArrayList<String>) list.getSelectedValuesList();
+				for(int i = 0; i < x.size(); ++i){
+					String [] splited = x.get(i).split(",");
+					aux.add(new Pair<Integer,Integer>(Integer.parseInt(splited[0]),Integer.parseInt(splited[1])));
+				}
+				if(aux.size() == 0){
+					lblNewLabel.setText("No s'ha seleccionat cap seient");
+				}
+					
+				else{
+					ctrlPresentacion.PrOkSeleccionarSeients(aux); //Cambiar
+				}	
 			}
 		});
 		
@@ -106,16 +132,23 @@ public class MostraOcupacio {
 			}
 		});
 		
-		JLabel lblNewLabel = new JLabel("Sin errores");
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.gridheight = 2;
-		gbc_lblNewLabel.gridwidth = 8;
-		gbc_lblNewLabel.gridx = 0;
-		gbc_lblNewLabel.gridy = 6;
-		contentPane.add(lblNewLabel, gbc_lblNewLabel);
+		
 	}
 	
 	public void mostra() {
 		frame.setVisible(true);
+	}
+	
+	public void asignaSeients(ArrayList<String> aux) {
+		String llista[] = aux.stream().toArray(String[]::new);
+		list = new JList(llista);
+		GridBagConstraints gbc_list = new GridBagConstraints();
+		gbc_list.gridwidth = 3;
+		gbc_list.gridheight = 5;
+		gbc_list.insets = new Insets(0, 0, 5, 5);
+		gbc_list.fill = GridBagConstraints.BOTH;
+		gbc_list.gridx = 1;
+		gbc_list.gridy = 1;
+		contentPane.add(list, gbc_list);
 	}
 }

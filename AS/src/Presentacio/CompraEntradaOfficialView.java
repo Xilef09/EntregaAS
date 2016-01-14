@@ -108,6 +108,7 @@ public class CompraEntradaOfficialView {
 	
 		comboBox = new JComboBox<String>();
 		contentPane.add(comboBox, "6, 2, 4, 1, fill, default");
+		comboBox.setSelectedItem(0);
 		
 		JLabel lblDate = new JLabel("Data");
 		contentPane.add(lblDate, "2, 6, right, center");
@@ -116,6 +117,9 @@ public class CompraEntradaOfficialView {
 		contentPane.add(textField, "6, 6, 4, 1, fill, default");
 		textField.setColumns(10);
 		
+		JLabel lblNewLabel = new JLabel("Sin errores");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		contentPane.add(lblNewLabel, "2, 16, 10, 1");
 		
 		JButton okButton = new JButton("OK");
 		okButton.addActionListener(new ActionListener() {
@@ -123,10 +127,17 @@ public class CompraEntradaOfficialView {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				try {
-					ctrlPresentacion.PrOkobteRepresentacions(null, null);
+					//llegim els dos parametres titol i data
+				
+					String titol = comboBox.getSelectedItem().toString();
+				    String data = textField.getText();
+				    //System.out.println(titol + " " + data);
+					ctrlPresentacion.PrOkobteRepresentacions(titol, data);
+					
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					//lblNewLabel.setText("No hay Representaciones para Esa Data y ese Espectaculo");
+					lblNewLabel.setText(e.toString());
 				} // CAMBIAR
 			}
 			
@@ -143,9 +154,9 @@ public class CompraEntradaOfficialView {
 			
 		});
 		contentPane.add(cancelButton, "8, 12, left, top");
-		
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel, "2, 16, 10, 1");
+
 		
 	}
 	

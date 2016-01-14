@@ -8,6 +8,11 @@ import org.hibernate.cfg.Configuration;
 
 import Domini.Espectacle;
 import Domini.Estrena;
+import Domini.Local;
+import Domini.Representacio;
+import Domini.Seient;
+import Domini.SeientEnRepresentacio;
+import Domini.Sessio;
 
 
 public class Main {
@@ -17,27 +22,10 @@ public class Main {
 	private static Session session;
 
 	private static void creaEspec() throws Exception{
-		System.out.println("entrooooooooooo");
-		/*SessionFactory factory = new Configuration().configure().buildSessionFactory();
-		session = factory.openSession();
+		//System.out.println("entrooooooooooo");
+		//SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		//session = factory.openSession();
 		
-		Espectacle e = new Espectacle("Espe1",10);
-		session.beginTransaction();
-		session.save(e);
-		session.getTransaction().commit();
-		
-		e = new Espectacle("Espe2",10);
-		session.beginTransaction();
-		session.save(e);
-		session.getTransaction().commit();
-		
-		e = new Espectacle("Espe3",10);
-		session.beginTransaction();
-		session.save(e);
-		session.getTransaction().commit();
-		
-		session.close();
-		factory.close();*/
 		
 	}
 	//-------------------------------------------------------
