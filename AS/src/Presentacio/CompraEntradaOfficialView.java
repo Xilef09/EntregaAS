@@ -26,6 +26,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
 
 public class CompraEntradaOfficialView extends JFrame {
 
@@ -66,6 +67,8 @@ public class CompraEntradaOfficialView extends JFrame {
 				FormFactory.DEFAULT_COLSPEC,
 				FormFactory.RELATED_GAP_COLSPEC,
 				FormFactory.DEFAULT_COLSPEC,
+				FormFactory.RELATED_GAP_COLSPEC,
+				FormFactory.DEFAULT_COLSPEC,
 				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
 				ColumnSpec.decode("28px:grow"),
 				FormFactory.RELATED_GAP_COLSPEC,
@@ -102,19 +105,18 @@ public class CompraEntradaOfficialView extends JFrame {
 		
 		String [] s = {"a", "b", "c"};
 		
-		JLabel lblEspectacles = new JLabel("Espectacles");
-		lblEspectacles.setHorizontalAlignment(SwingConstants.LEFT);
-		lblEspectacles.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(lblEspectacles, "2, 2, right, center");
+		JLabel lblEspectacles = new JLabel();
+		lblEspectacles.setText("Espectacles");
+		contentPane.add(lblEspectacles, "2, 2, 4, 1, default, center");
 		
-		JComboBox comboBox = new JComboBox();
-		contentPane.add(comboBox, "4, 2, 4, 1, fill, default");
+		JComboBox<String> comboBox = new JComboBox<String>();
+		contentPane.add(comboBox, "6, 2, 4, 1, fill, default");
 		
 		JLabel lblDate = new JLabel("Data");
 		contentPane.add(lblDate, "2, 6, right, center");
 		
 		textField = new JTextField();
-		contentPane.add(textField, "4, 6, 4, 1, fill, default");
+		contentPane.add(textField, "6, 6, 4, 1, fill, default");
 		textField.setColumns(10);
 		
 		
@@ -123,25 +125,32 @@ public class CompraEntradaOfficialView extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				try {
-					frame.finalize();
-				} catch (Throwable e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
+				MostraRepresentacions mr = new MostraRepresentacions();
+				System.out.println("HOLAAAA");
+				frame.getContentPane().removeAll();
+				frame.revalidate();
+	            frame.repaint();
+				frame.setVisible(true);
 			}
 			
 		});
-		contentPane.add(okButton, "4, 12, left, top");
+		contentPane.add(okButton, "6, 12, left, top");
 		
 		JButton cancelButton = new JButton("Cancel");
-		contentPane.add(cancelButton, "6, 12, left, top");
+		cancelButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+			}
+			
+		});
+		contentPane.add(cancelButton, "8, 12, left, top");
 		
 		JLabel lblNewLabel = new JLabel();
 		//PONER TEXTO EN CASO DE ERROR
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel, "2, 16, 8, 1");
+		contentPane.add(lblNewLabel, "2, 16, 10, 1");
 		
 	}
 	

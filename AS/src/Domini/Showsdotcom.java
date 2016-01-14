@@ -33,6 +33,9 @@ public class Showsdotcom {
 
 	public String getNumCompteShows() {
 		return numeroCompte;
+		
+	public String getMoneda() {
+		return moneda;
 	}
 	
 }

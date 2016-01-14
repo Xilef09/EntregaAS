@@ -17,6 +17,7 @@ public class CtrlComprarEntrada {
 	private ArrayList<Pair<Integer,Integer>> seients;
 	private Float preuTotal;
 	
+	private FactoryAdapters myFactoryAdapter = FactoryAdapters.getInstance();
 	private FactoryControladors myFactory = FactoryControladors.getInstance();
 	private FactoryCtrlCasDus myFactoryCU = FactoryCtrlCasDus.getInstance();
 	private FactoryAdapters myFactoryAdap = FactoryAdapters.getInstance();
@@ -52,8 +53,12 @@ public class CtrlComprarEntrada {
 		this.preuTotal = pfinal;
 		return Pair.with(pfinal, canvis);
 	}
-	public float obtePreuMoneda(String moneda){
-		return (Float) null; //TO DO 
+	
+	public float obtePreuMoneda(String moneda) throws Exception{
+		ConversorAdapter ca = myFactoryAdapter.getConversorAdapter();
+		String divisa = myShowsdotCom.getMoneda();
+		float c = ca.obteConversionRate(divisa, moneda);
+		return this.preuTotal*c;
 	}
 	public void pagament (String dni, Integer codiB, String numCompte) throws Exception{
 		iBankAdapter myBankAdapter = myFactoryAdap.getBankAdapter();
