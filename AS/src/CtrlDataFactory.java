@@ -1,5 +1,11 @@
+import Persistencia.ControladorEspectacle;
+import Persistencia.ControladorEspectacleDB;
 import Persistencia.ControladorLocal;
 import Persistencia.ControladorLocalDB;
+import Persistencia.ControladorSeientsEnRepresentacio;
+import Persistencia.ControladorSeientsEnRepresentacioDB;
+import Persistencia.ControladorSessio;
+import Persistencia.ControladorSessioDB;
 
 
 public class CtrlDataFactory {

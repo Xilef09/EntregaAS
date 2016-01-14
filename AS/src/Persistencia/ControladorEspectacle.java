@@ -1,3 +1,4 @@
+package Persistencia;
 import java.util.ArrayList;
 
 import Domini.Espectacle;
@@ -8,5 +9,5 @@ public interface ControladorEspectacle {
 	
 	public Boolean exists(String titol) throws Exception;
 	
-	public ArrayList<Espectacle> all()throws Exception;
+	public ArrayList<Espectacle> all();
 }
