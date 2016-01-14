@@ -8,7 +8,6 @@ public class ControladorSeientsEnRepresentacio {
 	private CtrlDataFactory ctrlDataFactory;
 
 	public ControladorSeientsEnRepresentacio() {
-		// TODO Auto-generated constructor stub
 		ctrlDataFactory = CtrlDataFactory.getInstance();
 	}
 
