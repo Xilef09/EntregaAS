@@ -1,3 +1,4 @@
+package Presentacio;
 import java.util.ArrayList;
 
 import org.hibernate.Session;

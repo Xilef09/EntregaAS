@@ -5,15 +5,17 @@ import java.util.ArrayList;
 import org.javatuples.*;
 
 public class CtrlConsultaOcupacio {
-	private FactoryControladors myFactory = FactoryControladors.getInstance();
+	private FactoryControladors myFactory;
 	
 	public ArrayList<Pair<Integer,Integer>> consultaOcupacio(String nomLocal, String sessio, Integer nombEspectadors) throws Exception{
+		myFactory = FactoryControladors.getInstance();
 		ControladorRepresentacio ctrConsultaRep = myFactory.getCtrlRepresentacio();
 		Representacio r = ctrConsultaRep.getRepresentacio(nomLocal, sessio);
 		r.hiHaEspai(nombEspectadors);
 		return r.consultaOcupacio("lliure");
 	}
 	public ArrayList<Septet<String,String,String,String,Integer,Boolean,Float>> totesRepresentacions() throws Exception{
+		myFactory = FactoryControladors.getInstance();
 		ControladorRepresentacio cr = myFactory.getCtrlRepresentacio();
 		ArrayList<Representacio> representacions = cr.getAll();
 		if(representacions.isEmpty()) throw new Exception ("No hi ha Representacions");
