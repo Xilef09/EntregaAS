@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="seientsenrepresentacio")
+@Table (name="seientenrepresentacio")
 public class SeientEnRepresentacio implements Serializable{
 	@Id
 	@Column(name="sessio")
