@@ -76,10 +76,19 @@ public class CtrlComprarEntrada {
 			existeixID = ce.existeixEntrada(id);
 		}
 		Integer nSeients = seients.size();
-		Entrada e = new Entrada(id,dni,nSeients,dataActual,preuTotal);
+		Entrada e = new Entrada(id,dni,nSeients,dataActual,preuTotal); //s'ha d'afegir a la BD????
 		
-		//pre fer
-		
+		//guillem repassa
+		ControladorRepresentacio ctrlR = myFactory.getCtrlRepresentacio();
+		Representacio rep = ctrlR.getRepresentacio(nomLocal, sessio);
+		e.setNomLocal(rep.getNomLocal());
+		e.setSessio(rep.getSessio());
+		for (Pair<Integer, Integer> s : seients) {
+			ControladorSeientsEnRepresentacio ctrlcs = myFactory.getCtrlSeientsEnRepresentacio();
+			SeientEnRepresentacio r = ctrlcs.getSeientEnRepresentacio(null,null,null,null,null,null);//atributs?
+			r.setEstat(1);
+			e.asignarSeient;//kljadfnscvxjfdsklndknvfdj
+		}
 		
 	}
 	public ArrayList<String> obteEspectacles() throws Exception{
