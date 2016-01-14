@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.javatuples.Pair;
+
 @Entity
 @Table (name="seientenrepresentacio")
 public class SeientEnRepresentacio implements Serializable{
@@ -114,5 +116,9 @@ public class SeientEnRepresentacio implements Serializable{
 	public void setColumna(Integer columna) {
 		this.columna = columna;
 	}
-
+	
+	public Pair<Integer,Integer> obteUbicacio(){
+		Pair<Integer,Integer> ubi = new Pair<Integer,Integer>(this.fila, this.columna);
+		return ubi;
+	}
 }
