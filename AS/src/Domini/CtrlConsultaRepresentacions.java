@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import org.javatuples.*;
 
 public class CtrlConsultaRepresentacions {
-	private FactoryControladors myFactory = FactoryControladors.getInstance();
+	private FactoryControladors myFactory;
 	
 	
 	public ArrayList<String> consultaEspectacles() throws Exception{
+		myFactory = FactoryControladors.getInstance();
 		ControladorEspectacle ce = myFactory.getCtrlEspectacle();
 		ArrayList<Espectacle> es = ce.getAll();
 		if(es.size()==0) throw new Exception("No hi ha espectacles");
@@ -20,6 +21,7 @@ public class CtrlConsultaRepresentacions {
 	}
 	
 	public ArrayList <Quintet<String, String, Integer, Boolean, Float>> consultaRepresentacions(String titol, String date) throws Exception{
+		myFactory = FactoryControladors.getInstance();
 		ControladorEspectacle ce = myFactory.getCtrlEspectacle();
 		Espectacle espectacle = ce.getEspectacle(titol);
 		return espectacle.consultaRepresentacions(date);

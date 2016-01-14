@@ -18,13 +18,16 @@ public class FactoryControladors {
 		ctrlSeientsEnRepresentacio = new ControladorSeientsEnRepresentacio();
 		ctrlConsultaOcupacio = new CtrlConsultaOcupacio();
 		ctrlConsultaRepresentacions = new CtrlConsultaRepresentacions();
+		System.out.println("Primera creacion");
 
 	}
 
 	public static FactoryControladors getInstance() {
         if (instance == null) {
-            System.out.println("Singleton sucks");
+        	System.out.println("Singleton sucks");
+        	instance = new FactoryControladors();
         }
+        System.out.println("Singleton sucks2");
         return instance;
     }
 
