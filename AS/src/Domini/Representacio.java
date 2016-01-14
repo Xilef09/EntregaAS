@@ -134,4 +134,8 @@ public class Representacio implements Serializable {
 
 	}
 
+	public Float getRecarrec() {
+		return 0.0f;
+	}
+
 }
