@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import org.javatuples.Pair;
 import org.javatuples.Quintet;
 
+import Domini.ControladorEspectacle;
+import Domini.Espectacle;
+import Domini.FactoryControladors;
+
 public class CompraEntradaUseCaseController {
 	
 	private String titol;
@@ -39,7 +43,14 @@ public class CompraEntradaUseCaseController {
 	}
 	
 	public ArrayList<String> obteEspectacles() {
-		
+		FactoryControladors myFactoryControlador = Domini.FactoryControladors.getInstance();
+		ControladorEspectacle ctrEspec = myFactoryControlador.getCtrlEspectacle();
+		ArrayList<Espectacle> le = ctrEspec.getAll();
+		ArrayList<String> res = new ArrayList<String>();
+		for (Espectacle e:le) {
+			res.add(e.getTitol());
+		}
+		return res;
 	}
 
 }
