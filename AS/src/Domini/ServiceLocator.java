@@ -4,7 +4,7 @@ public class ServiceLocator {
 
 	private static ServiceLocator instance = null;
 
-	protected ServiceLocator() {}
+	private ServiceLocator() {}
 
 	public static ServiceLocator getInstance() {
         if (instance == null) {

@@ -27,6 +27,13 @@ public class Showsdotcom {
 		return canvis;
 	}
 
+	public Integer getCodiBancShows() {
+		return codiBanc;
+	}
+
+	public String getNumCompteShows() {
+		return numeroCompte;
+		
 	public String getMoneda() {
 		return moneda;
 	}

@@ -2,15 +2,15 @@ package Domini;
 
 public class BankAdapter implements iBankAdapter{
 
-	public BankAdapter() {
-		// TODO Auto-generated constructor stub
-	}
-
+	ServiceLocator myServiceLocator = ServiceLocator.getInstance();
 	@Override
-	public Boolean autoritza(Integer dni, Integer codiB, Integer numCompte, Integer codiBS, Integer numCompteS,
+	public Boolean autoritza(String dni, Integer codiB, String numCompte, Integer codiBS, String numCompteS,
 			String g) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+			BankService bs = (BankService)myServiceLocator.find("BankService");
+			if (bs == null)
+				throw new Exception ("Servei no disponible");
+			return bs.autoritza(dni,codiB,numCompte,codiBS,numCompteS);
+			
 	}
 
 }
