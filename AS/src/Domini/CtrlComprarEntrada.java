@@ -51,10 +51,11 @@ public class CtrlComprarEntrada {
 		return Pair.with(pfinal, canvis);
 	}
 	
-	public float obtePreuMoneda(String moneda){
+	public float obtePreuMoneda(String moneda) throws Exception{
 		ConversorAdapter ca = myFactoryAdapter.getConversorAdapter();
 		String divisa = myShowsdotCom.getMoneda();
-		
+		float c = ca.obteConversionRate(divisa, moneda);
+		return this.preuTotal*c;
 	}
 	
 	public void pagament (String dni, Integer codiB, String numCompte){
