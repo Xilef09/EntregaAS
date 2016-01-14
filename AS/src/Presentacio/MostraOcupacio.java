@@ -31,7 +31,6 @@ import java.awt.event.WindowEvent;
 public class MostraOcupacio {
 	
 	private JPanel contentPane;
-	private JTextField textField;
 	private JFrame frame;
 	
 	/**
@@ -93,20 +92,6 @@ public class MostraOcupacio {
 		
 		String [] s = {"a", "b", "c"};
 		
-		JLabel lblEspectacles = new JLabel();
-		lblEspectacles.setText("Espectacles");
-		contentPane.add(lblEspectacles, "2, 2, 4, 1, default, center");
-		
-		JComboBox<String> comboBox = new JComboBox<String>();
-		contentPane.add(comboBox, "6, 2, 4, 1, fill, default");
-		
-		JLabel lblDate = new JLabel("Data");
-		contentPane.add(lblDate, "2, 6, right, center");
-		
-		textField = new JTextField();
-		contentPane.add(textField, "6, 6, 4, 1, fill, default");
-		textField.setColumns(10);
-		
 		
 		JButton okButton = new JButton("OK");
 		okButton.addActionListener(new ActionListener() {
@@ -116,6 +101,9 @@ public class MostraOcupacio {
 			}
 			
 		});
+		
+		JLabel label = new JLabel("New label");
+		contentPane.add(label, "1, 2");
 		contentPane.add(okButton, "6, 12, left, top");
 		
 		JButton cancelButton = new JButton("Cancel");
