@@ -10,7 +10,7 @@ public class ConversorAdapter implements iConversorAdapter{
 		CurrentConvertorService css = (CurrentConvertorService) sl.find("CurrencyConvertorService");
 		if (css==null)
 			throw new Exception ("Error: serveiNoDisponible\n");
-		css.conversionRate(divisa, moneda);
+		return css.conversionRate(divisa, moneda);
 	}
 
 }

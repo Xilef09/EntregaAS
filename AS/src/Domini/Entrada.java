@@ -1,4 +1,5 @@
 package Domini;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -31,10 +32,9 @@ public class Entrada {
 	
 	@Column (name="nomlocal")
 	private String nomLocal;
+	private ArrayList<SeientEnRepresentacio> sr = new ArrayList<>();
 
-	public Entrada() {
 
-	}
 	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, String data, Float preu, String sessio, String nomLocal) throws Exception {
 		super();
 		if (identificador.isEmpty() || identificador == null)
@@ -59,6 +59,9 @@ public class Entrada {
 		this.data=dataActual;
 		this.preu=preuTotal;
 	}
+	public Entrada() {
+	}
+
 	public String getIdentificador() {
 		return identificador;
 	}
@@ -113,6 +116,10 @@ public class Entrada {
 
 	public void setNomLocal(String nomLocal) {
 		this.nomLocal = nomLocal;
+	}
+	public void asignarSeient(SeientEnRepresentacio r) {
+		sr.add(r);
+		
 	}
 
 }
