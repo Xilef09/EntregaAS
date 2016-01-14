@@ -38,6 +38,8 @@ public class SeientEnRepresentacio implements Serializable{
 	@Column(name="estat")
 	private Integer estat; // 0 libre 1 ocupado
 	
+	public SeientEnRepresentacio(){}
+	
 	public SeientEnRepresentacio(Integer estat, String sessio, String idEntrada, String nomLocal, String nomLocalSeient, Integer fila, Integer columna) throws Exception {
 		super();
 		if (nomLocalSeient.isEmpty() || nomLocalSeient == null)

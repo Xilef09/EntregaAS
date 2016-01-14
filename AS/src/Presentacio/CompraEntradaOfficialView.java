@@ -121,7 +121,10 @@ public class CompraEntradaOfficialView {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				try {
-					ctrlPresentacion.PrOkobteRepresentacions(null, null);
+					//llegim els dos parametres titol i data
+					String titol = comboBox.getSelectedItem().toString();
+				    String data = textField.getText();
+					ctrlPresentacion.PrOkobteRepresentacions(titol, data);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

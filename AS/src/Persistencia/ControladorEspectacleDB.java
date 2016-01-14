@@ -26,6 +26,7 @@ public class ControladorEspectacleDB implements ControladorEspectacle{
 		session.getTransaction().commit();
 		factory.close();
 		if (!l.isEmpty()) return l.get(0);
+		//System.out.println("titol->"+titol);
 		throw new Exception ("Espectacle no existeix");
 	}
 
