@@ -11,14 +11,14 @@ import Persistencia.ControladorSessioDB;
 
 public class CtrlDataFactory {
 	private static CtrlDataFactory instance= null;
-	private ControladorRepresentacioDB controladorRepresentacio = new ControladorRepresentacioDB();
-	private ControladorEspectacleDB controladorEspectacle = new ControladorEspectacleDB();
-	private ControladorSessioDB controladorSessio = new ControladorSessioDB();
-	private ControladorSeientsDB controladorSeients = new ControladorSeientsDB();
-	private ControladorSeientsEnRepresentacioDB controladorSeientsEnRepresentacio = new ControladorSeientsEnRepresentacioDB();
-	private ControladorLocalDB controladorLocal = new ControladorLocalDB();
-	private ControladorEstrenaDB controladorEstrena = new ControladorEstrenaDB();
-	private ControladorEntradaDB controladorEntrada = new ControladorEntradaDB();
+	private ControladorRepresentacio controladorRepresentacio = new ControladorRepresentacioDB();
+	private ControladorEspectacle controladorEspectacle = new ControladorEspectacleDB();
+	private ControladorSessio controladorSessio = new ControladorSessioDB();
+	private ControladorSeients controladorSeients = new ControladorSeientsDB();
+	private ControladorSeientsEnRepresentacio controladorSeientsEnRepresentacio = new ControladorSeientsEnRepresentacioDB();
+	private ControladorLocal controladorLocal = new ControladorLocalDB();
+	private ControladorEstrena controladorEstrena = new ControladorEstrenaDB();
+	private ControladorEntrada controladorEntrada = new ControladorEntradaDB();
 	
 	
 	protected CtrlDataFactory(){

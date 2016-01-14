@@ -9,14 +9,16 @@ public class ControladorRepresentacio {
 
 	public ControladorRepresentacio() {
 		// TODO Auto-generated constructor stub
-		ctrl
+		ctrlDataFactory = CtrlDataFactory.getInstance();
 	}
 
-	public Representacio getRepresentacio(String nomLocal, String sessio){
-		
+	public Representacio getRepresentacio(String nomLocal, String sessio) throws Exception{
+		Persistencia.ControladorRepresentacio ctrRep = ctrlDataFactory.getControladorRepresentacio();
+		return ctrRep.get(nomLocal, sessio);
 	}
 	
-	public ArrayList<Representacio> getAll(){
-		
+	public ArrayList<Representacio> getAll() throws Exception{
+		Persistencia.ControladorRepresentacio ctrRep = ctrlDataFactory.getControladorRepresentacio();
+		return ctrRep.all();
 	}
 }
