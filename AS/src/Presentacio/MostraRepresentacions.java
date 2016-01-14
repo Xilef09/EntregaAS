@@ -108,9 +108,14 @@ public class MostraRepresentacions {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				//frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+				frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 			}
 		});
+	}
+
+	public void mostra() {
+		// TODO Auto-generated method stub
+		frame.setVisible(true);
 	}
 
 }

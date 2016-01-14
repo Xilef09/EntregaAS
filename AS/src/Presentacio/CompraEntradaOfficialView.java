@@ -115,8 +115,7 @@ public class CompraEntradaOfficialView {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				MostraRepresentacions mr = new MostraRepresentacions(ctrlPresentacion);
-				mr.setVisible(true);
+				ctrlPresentacion.PrOkobteRepresentacions(null, null); // CAMBIAR
 			}
 			
 		});
