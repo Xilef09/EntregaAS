@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-mapping>
+        <class name="Representacio">
+            <composite-id>
+               <key-property name="sessio">
+                        <generator class="native"></generator>
+                </key-property>
+                <key-property name="nomlocal">
+                        <generator class="native"></generator>
+                </key-property> 
+            </composite-id>
+                
+                <property name="titol"></property>
+                <property name="preu"></property>
+                <property name="data"></property>
+                <property name="nombreseientslliures"></property>
+
+                <joined-subclass name="Estrena">
+                    <composite-id>
+		               <key-property column="sessio">
+		                </key-property>
+		                <key-property column="nomlocal">
+		                </key-property> 
+		            </composite-id>
+                        <property name="recarrec"></property>
+                </joined-subclass>
+        </class>
+
+</hibernate-mapping>
