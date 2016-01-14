@@ -33,13 +33,7 @@ public class Entrada {
 	private String nomLocal;
 
 	public Entrada() {
-		this.identificador = "a";
-		this.dniClient = "a";
-		this.data = "a";
-		this.preu = (float) 2.0;
-		this.nombreEspectadors = 2;	
-		this.sessio="a";
-		this.nomLocal="f";
+
 	}
 	public Entrada(String identificador, String dniClient, Integer nombreEspectadors, String data, Float preu, String sessio, String nomLocal) throws Exception {
 		super();
