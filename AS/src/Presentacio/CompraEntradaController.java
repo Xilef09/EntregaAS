@@ -13,6 +13,8 @@ public class CompraEntradaController {
 	private CompraEntradaOfficialView comprEntrOV;
 	private MostraRepresentacions mostraRepre;
 	private MostraOcupacio mostraOcupa;
+	private ComprarEntrada comprarEntrada;
+	private FinCompra finCompra;
 	
 	public CompraEntradaController() {
 		compEntrCU = new CompraEntradaUseCaseController();
@@ -41,7 +43,8 @@ public class CompraEntradaController {
 	}
 	
 	void PrOkSeleccionarSeients(ArrayList<Pair<Integer, Integer>> myArray) {
-		
+		comprarEntrada = new ComprarEntrada(this);
+		comprarEntrada.mostra();
 	}
 	
 	void PrObtePreuMoneda(String moneda) {
@@ -53,7 +56,8 @@ public class CompraEntradaController {
 	}
 	
 	void PrOkFinalitza() {
-		
+		finCompra = new FinCompra(this);
+		finCompra.mostra();
 	}
 	
 	void PrCancela() {
