@@ -6,6 +6,8 @@ import java.util.Random;
 
 import org.javatuples.*;
 
+import Persistencia.CtrlDataFactory;
+
 
 
 public class CtrlComprarEntrada {
@@ -87,7 +89,9 @@ public class CtrlComprarEntrada {
 			r.setEstat(1);
 			e.asignarSeient(r);
 		}
-		
+		CtrlDataFactory ctrlDataFactory = Persistencia.CtrlDataFactory.getInstance();
+		Persistencia.ControladorEntrada ctrlEnt = ctrlDataFactory.getControladorEntrada();
+		ctrlEnt.set(e);
 	}
 	public ArrayList<String> obteEspectacles() throws Exception{
 		CtrlConsultaRepresentacions cr = myFactoryCU.getCtrlConsultaRepresentacions();

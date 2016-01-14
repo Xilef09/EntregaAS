@@ -9,4 +9,6 @@ public interface ControladorEntrada {
 	public Boolean exists(String identificador) throws Exception;
 	
 	public ArrayList<Entrada> all()throws Exception;
+	
+	public void set(Entrada x)throws Exception;
 }
