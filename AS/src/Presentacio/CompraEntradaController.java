@@ -49,7 +49,21 @@ public class CompraEntradaController {
 	
 	void PrObteOcupacio(String nomLocal, String sessio, Integer nombEspectadors) {
 		//Obtener Ocupacio
+		ArrayList<String> info = new ArrayList<String>();
+		ArrayList<Pair<Integer,Integer>> ocupacio = new ArrayList<Pair<Integer,Integer>>();
+		try {
+			 ocupacio = compEntrCU.obteOcupacio(nomLocal, sessio, nombEspectadors); 
+		}
+		catch (Exception e) {
+			
+		}
+		for(int i = 0; i < ocupacio.size(); ++i) {
+			String auxs = ocupacio.get(i).getValue0() + ","+ ocupacio.get(i).getValue1()  + "";
+			info.add(auxs);
+		}
+		
 		mostraOcupa = new MostraOcupacio(this);
+		mostraOcupa.asignaSeients(info);
 		mostraOcupa.mostra();
 	}
 	

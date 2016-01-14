@@ -7,6 +7,7 @@ import java.awt.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.ListModel;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.GridBagLayout;
@@ -64,6 +65,7 @@ public class MostraRepresentacions {
 		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 		list = new JList();
+		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		GridBagConstraints gbc_list = new GridBagConstraints();
 		gbc_list.gridwidth = 3;
 		gbc_list.gridheight = 5;
@@ -97,11 +99,28 @@ public class MostraRepresentacions {
 		gbc_btnOk.gridy = 5;
 		contentPane.add(btnOk, gbc_btnOk);
 		
+		JLabel lblNewLabel = new JLabel("Sin errores");
+		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+		gbc_lblNewLabel.gridheight = 2;
+		gbc_lblNewLabel.gridwidth = 8;
+		gbc_lblNewLabel.gridx = 0;
+		gbc_lblNewLabel.gridy = 6;
+		contentPane.add(lblNewLabel, gbc_lblNewLabel);
+		
 		btnOk.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				ctrlPresentacion.PrObteOcupacio(null, null, null); //Cambiar
+				String aux = (String) list.getSelectedValue();
+				String[] aux2 = aux.split(",");
+				String nomLocal = aux2[0];
+				String sessio = aux2[1];
+				try{
+					ctrlPresentacion.PrObteOcupacio(nomLocal, sessio, Integer.parseInt(textField.getText())); //Cambiar
+				}
+				catch (Exception e){
+					lblNewLabel.setText("<html><body>No S'ha intruduit alguna dada correctament<br> o el nombre de espectadors es mes grant que el nombre de seients lliures</body></html>");
+				}
+				
 			}
 		});
 		
@@ -120,13 +139,6 @@ public class MostraRepresentacions {
 			}
 		});
 		
-		JLabel lblNewLabel = new JLabel("Sin errores");
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.gridheight = 2;
-		gbc_lblNewLabel.gridwidth = 8;
-		gbc_lblNewLabel.gridx = 0;
-		gbc_lblNewLabel.gridy = 6;
-		contentPane.add(lblNewLabel, gbc_lblNewLabel);
 	}
 
 	public void mostra() {
