@@ -8,6 +8,8 @@ import javax.persistence.Table;
 
 import org.javatuples.Quintet;
 
+import Persistencia.CtrlDataFactory;
+
 
 @Entity
 @Table(name="espectacle")
@@ -20,7 +22,12 @@ public class Espectacle {
 	private Integer participants;
 	private ArrayList<Representacio> representacions = new ArrayList<>();
 	
+
+	private CtrlDataFactory ctrlDataFactory;
+
+	
 	public Espectacle() {
+		ctrlDataFactory = CtrlDataFactory.getInstance();
 	}
 	
 	/**
@@ -35,6 +42,7 @@ public class Espectacle {
 			throw new Exception ("Error: El numero de participants ha de ser un enter major que 0\n");
 		this.titol = titol;
 		this.participants = participants;
+		ctrlDataFactory = CtrlDataFactory.getInstance();
 	
 	}
 
@@ -55,6 +63,20 @@ public class Espectacle {
 	}
 
 	public ArrayList<Quintet<String, String, Integer, Boolean, Float>> consultaRepresentacions(String date) {
+		
+		ArrayList<Representacio> myRepresentacions;
+		try {
+			myRepresentacions = ctrlDataFactory.getControladorRepresentacio().all();
+			for (int j=0; j<myRepresentacions.size(); ++j) {
+				if (myRepresentacions.get(j).getTitolEspectacle().equals(titol)) {
+						representacions.add(myRepresentacions.get(j));
+					}
+			}		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		System.out.println("HOOOOOOOOOOOOOOOOOOOOOOO" + " " + representacions.size());
 		ArrayList<Quintet<String,String,Integer,Boolean,Float>> r = new ArrayList();
 		for(int i=0;i<representacions.size();++i){

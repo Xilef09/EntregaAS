@@ -32,6 +32,7 @@ public class CompraEntradaController {
 	}
 	
 	void PrOkobteRepresentacions(String titulo, String data) throws Exception {
+		System.out.println("AQUIIIIIIIIIII");
 		ArrayList<Quintet<String, String, Integer, Boolean, Float>> lr = compEntrCU.ObteRepresentacions(titulo, data);
 		ArrayList<String> informacio = new ArrayList<String>();
 		for (Quintet<String, String, Integer, Boolean, Float> qr: lr) {
