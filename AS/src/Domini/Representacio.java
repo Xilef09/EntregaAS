@@ -34,6 +34,7 @@ public class Representacio implements Serializable {
 	public Representacio() {
 		
 	}
+	
 	public Representacio(Float preu, Date data, Integer nombreSeientsLliures, String sessio, String titolEspectacle, String nomLocal) throws Exception {
 		super();
 		if (titolEspectacle.isEmpty() || titolEspectacle == null)

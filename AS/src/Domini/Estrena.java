@@ -1,12 +1,19 @@
 package Domini;
 import java.util.Date;
 
-public class Estrena extends Representacio{
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="Estrena")
+public class Estrena extends Representacio{
+	
+	@Column(name="recarrec")
 	private Integer recarrec;
 	
 	public Estrena() {
-		this.recarrec = 2;
+		super();
 	}
 	
 	public Estrena(Integer recarrec, Float preu, Date data, String sessio, String nomLocal, String titolEspectacle, Integer numSeientsLliures) throws Exception {

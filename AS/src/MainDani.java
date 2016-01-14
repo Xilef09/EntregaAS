@@ -7,6 +7,7 @@ import org.hibernate.cfg.Configuration;
 import Domini.Entrada;
 import Domini.Estrena;
 import Domini.Seient;
+import Persistencia.ControladorEstrenaDB;
 
 
 public class MainDani {

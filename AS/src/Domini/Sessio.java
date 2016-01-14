@@ -11,6 +11,10 @@ public class Sessio {
 	@Column(name="sessio")
 	private String sessio;
 
+	public Sessio() {
+		
+	}
+	
 	public Sessio(String sessio) throws Exception {
 		super();
 		if (sessio == null)

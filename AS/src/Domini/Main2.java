@@ -13,6 +13,8 @@ import Domini.Espectacle;
 import Domini.Local;
 import Persistencia.ControladorEspectacleDB;
 import Persistencia.ControladorLocalDB;
+import Persistencia.ControladorSessio;
+import Persistencia.ControladorSessioDB;
 
 public class Main2 {
 
@@ -22,12 +24,42 @@ public class Main2 {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		session = factory.openSession();
 		
-		probarEspectaculo();
+		probarEstrena();
+		//probarEspectaculo();
 		//probarLocal();
 		session.close();
 		factory.close();
 	}
 	
+	private static void probarEstrena() {
+		ControladorSessioDB cs = new ControladorSessioDB();
+		try {
+			if(!cs.exists("mati")) crearSession(cs);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Estrena e = new Estrena();
+		e.setRecarrec(5);
+		e.setSessio("mati");
+		e.setNomLocal("ddd");
+		session.beginTransaction();
+		session.save(e);
+		session.getTransaction().commit();
+		
+		System.out.println("OK");
+	}
+	
+	
+	private static void crearSession(ControladorSessioDB cs) {
+		Sessio s = new Sessio();
+		s.setSessio("mati");
+		session.beginTransaction();
+		session.save(s);
+		session.getTransaction().commit();
+	}
+	
+	/*
 	private static void probarLocal() {
 		//Local l = new Local();
 		//l.setNom("dddd");
@@ -69,4 +101,5 @@ public class Main2 {
 		}
 		
 	}
+	*/
 }
