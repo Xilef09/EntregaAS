@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.javatuples.Quintet;
+
 @Entity
 @Table (name="representacio")
 public class Representacio implements Serializable {
@@ -32,7 +34,12 @@ public class Representacio implements Serializable {
 	private Integer nombreSeientsLliures;
 	
 	public Representacio() {
-		
+		this.preu = (float) 2;
+		this.data = new Date();
+		this.nombreSeientsLliures = 1;		
+		this.sessio = "2";		
+		this.titolEspectacle = "t1";		
+		this.nomLocal = "l1";	
 	}
 	
 	public Representacio(Float preu, String data, Integer nombreSeientsLliures, String sessio, String titolEspectacle, String nomLocal) throws Exception {
@@ -95,6 +102,12 @@ public class Representacio implements Serializable {
 
 	public void setSessio(String sessio) {
 		this.sessio = sessio;
+	}
+	public Quintet<String, String, Integer, Boolean, Float> obteDades() {
+		return Quintet.with(getNomLocal(),getSessio(),getNombreSeientsLliures(),etsEstrena(),getPreu());
+	}
+	private Boolean etsEstrena() {
+		return false;
 	}
 
 }

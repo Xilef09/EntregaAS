@@ -6,20 +6,27 @@ import org.hibernate.cfg.Configuration;
 
 import Domini.Entrada;
 import Domini.Estrena;
+import Domini.Local;
+import Domini.Representacio;
 import Domini.Seient;
 import Persistencia.ControladorEstrenaDB;
+import Domini.Sessio;
 
 
 public class MainDani {
 	public static void main(String[] args) throws Exception {
-		Estrena x = new Estrena();
+		//Representacio x = new Representacio();
+		//Sessio z = new Sessio("s1");
+		//Local l = new Local("l1", "a1");
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Session session = factory.getCurrentSession();
         session.beginTransaction();
-        session.save(x);
-        session.getTransaction().commit();
+        //session.save(l);
+        //session.save(z);
+        //session.save(x);
+        //session.getTransaction().commit();
         factory.close();
-		ControladorEstrenaDB aux = new ControladorEstrenaDB();
-		System.out.println(aux.get("", "").getNomLocal());
+		ControladorRepresentacioDB aux = new ControladorRepresentacioDB();
+		System.out.println(aux.all().get(0));
 	}
 }
