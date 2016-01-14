@@ -55,10 +55,17 @@ public class MostraRepresentacions {
 		gbl_contentPane.rowWeights = new double[]{0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
+		JLabel lblNewLabel_1 = new JLabel("Representacions");
+		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
+		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_1.gridx = 1;
+		gbc_lblNewLabel_1.gridy = 0;
+		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
+		
 		JList list = new JList();
 		GridBagConstraints gbc_list = new GridBagConstraints();
 		gbc_list.gridwidth = 3;
-		gbc_list.gridheight = 6;
+		gbc_list.gridheight = 5;
 		gbc_list.insets = new Insets(0, 0, 5, 5);
 		gbc_list.fill = GridBagConstraints.BOTH;
 		gbc_list.gridx = 1;
@@ -86,23 +93,23 @@ public class MostraRepresentacions {
 		GridBagConstraints gbc_btnOk = new GridBagConstraints();
 		gbc_btnOk.insets = new Insets(0, 0, 5, 5);
 		gbc_btnOk.gridx = 6;
-		gbc_btnOk.gridy = 6;
+		gbc_btnOk.gridy = 5;
 		contentPane.add(btnOk, gbc_btnOk);
-		
-		JButton btnCancel = new JButton("Cancel");
-		GridBagConstraints gbc_btnCancel = new GridBagConstraints();
-		gbc_btnCancel.insets = new Insets(0, 0, 5, 0);
-		gbc_btnCancel.gridx = 7;
-		gbc_btnCancel.gridy = 6;
-		contentPane.add(btnCancel, gbc_btnCancel);
 		
 		btnOk.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				
+				ctrlPresentacion.PrObteOcupacio(null, null, null); //Cambiar
 			}
 		});
+		
+		JButton btnCancel = new JButton("Cancel");
+		GridBagConstraints gbc_btnCancel = new GridBagConstraints();
+		gbc_btnCancel.insets = new Insets(0, 0, 5, 0);
+		gbc_btnCancel.gridx = 7;
+		gbc_btnCancel.gridy = 5;
+		contentPane.add(btnCancel, gbc_btnCancel);
 		
 		btnCancel.addActionListener(new ActionListener() {
 			@Override
@@ -111,6 +118,14 @@ public class MostraRepresentacions {
 				frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 			}
 		});
+		
+		JLabel lblNewLabel = new JLabel("Sin errores");
+		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+		gbc_lblNewLabel.gridheight = 2;
+		gbc_lblNewLabel.gridwidth = 8;
+		gbc_lblNewLabel.gridx = 0;
+		gbc_lblNewLabel.gridy = 6;
+		contentPane.add(lblNewLabel, gbc_lblNewLabel);
 	}
 
 	public void mostra() {

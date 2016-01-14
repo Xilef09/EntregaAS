@@ -9,6 +9,7 @@ public class CompraEntradaController {
 	private CompraEntradaUseCaseController compEntrCU;
 	private CompraEntradaOfficialView comprEntrOV;
 	private MostraRepresentacions mostraRepre;
+	private MostraOcupacio mostraOcupa;
 	
 	public CompraEntradaController() {
 		
@@ -27,7 +28,9 @@ public class CompraEntradaController {
 	}
 	
 	void PrObteOcupacio(String nomLocal, String sessio, Integer nombEspectadors) {
-		
+		//Obtener Ocupacio
+		mostraOcupa = new MostraOcupacio(this);
+		mostraOcupa.mostra();
 	}
 	
 	void PrOkSeleccionarSeients(ArrayList<Pair<Integer, Integer>> myArray) {

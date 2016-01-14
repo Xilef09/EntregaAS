@@ -1,9 +1,13 @@
 package Presentacio;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpinnerListModel;
@@ -16,10 +20,7 @@ import javax.swing.JSpinner;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.factories.FormFactory;
-import com.jgoodies.forms.layout.RowSpec;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,11 +33,14 @@ public class MostraOcupacio {
 	
 	private JPanel contentPane;
 	private JFrame frame;
+	private JTextField textField;
+	private static CompraEntradaController ctrlPresentacion;
 	
 	/**
 	 * Create the frame.
 	 */
-	public MostraOcupacio() {
+	public MostraOcupacio(CompraEntradaController ce) {
+		ctrlPresentacion = ce;
 		inicializa();
 	}
 	
@@ -44,83 +48,71 @@ public class MostraOcupacio {
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 450, 300);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		frame.setContentPane(contentPane);
-		contentPane.setLayout(new FormLayout(new ColumnSpec[] {
-				ColumnSpec.decode("89px"),
-				ColumnSpec.decode("56px"),
-				FormFactory.RELATED_GAP_COLSPEC,
-				FormFactory.DEFAULT_COLSPEC,
-				FormFactory.RELATED_GAP_COLSPEC,
-				FormFactory.DEFAULT_COLSPEC,
-				FormFactory.RELATED_GAP_COLSPEC,
-				FormFactory.DEFAULT_COLSPEC,
-				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
-				ColumnSpec.decode("28px:grow"),
-				FormFactory.RELATED_GAP_COLSPEC,
-				FormFactory.DEFAULT_COLSPEC,
-				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
-				ColumnSpec.decode("23px"),
-				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
-				ColumnSpec.decode("6px"),
-				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
-				ColumnSpec.decode("47px"),
-				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
-				ColumnSpec.decode("65px"),
-				FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
-				ColumnSpec.decode("1px"),},
-			new RowSpec[] {
-				FormFactory.UNRELATED_GAP_ROWSPEC,
-				RowSpec.decode("23px"),
-				FormFactory.RELATED_GAP_ROWSPEC,
-				FormFactory.DEFAULT_ROWSPEC,
-				FormFactory.RELATED_GAP_ROWSPEC,
-				FormFactory.DEFAULT_ROWSPEC,
-				FormFactory.RELATED_GAP_ROWSPEC,
-				FormFactory.DEFAULT_ROWSPEC,
-				FormFactory.RELATED_GAP_ROWSPEC,
-				FormFactory.DEFAULT_ROWSPEC,
-				FormFactory.RELATED_GAP_ROWSPEC,
-				FormFactory.DEFAULT_ROWSPEC,
-				FormFactory.RELATED_GAP_ROWSPEC,
-				FormFactory.DEFAULT_ROWSPEC,
-				FormFactory.RELATED_GAP_ROWSPEC,
-				FormFactory.DEFAULT_ROWSPEC,
-				FormFactory.RELATED_GAP_ROWSPEC,
-				FormFactory.DEFAULT_ROWSPEC,}));
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_contentPane.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_contentPane.columnWeights = new double[]{0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		contentPane.setLayout(gbl_contentPane);
 		
-		String [] s = {"a", "b", "c"};
+		JLabel lblNewLabel_1 = new JLabel("Seients");
+		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
+		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_1.gridx = 1;
+		gbc_lblNewLabel_1.gridy = 0;
+		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
+		JList list = new JList();
+		GridBagConstraints gbc_list = new GridBagConstraints();
+		gbc_list.gridwidth = 3;
+		gbc_list.gridheight = 5;
+		gbc_list.insets = new Insets(0, 0, 5, 5);
+		gbc_list.fill = GridBagConstraints.BOTH;
+		gbc_list.gridx = 1;
+		gbc_list.gridy = 1;
+		contentPane.add(list, gbc_list);
 		
-		JButton okButton = new JButton("OK");
-		okButton.addActionListener(new ActionListener() {
+		JButton btnOk = new JButton("OK");
+		GridBagConstraints gbc_btnOk = new GridBagConstraints();
+		gbc_btnOk.insets = new Insets(0, 0, 5, 5);
+		gbc_btnOk.gridx = 6;
+		gbc_btnOk.gridy = 5;
+		contentPane.add(btnOk, gbc_btnOk);
+		
+		btnOk.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				//ctrlPresentacion.PrObteOcupacio(null, null, null); //Cambiar
 			}
-			
 		});
 		
-		JLabel label = new JLabel("New label");
-		contentPane.add(label, "1, 2");
-		contentPane.add(okButton, "6, 12, left, top");
+		JButton btnCancel = new JButton("Cancel");
+		GridBagConstraints gbc_btnCancel = new GridBagConstraints();
+		gbc_btnCancel.insets = new Insets(0, 0, 5, 0);
+		gbc_btnCancel.gridx = 7;
+		gbc_btnCancel.gridy = 5;
+		contentPane.add(btnCancel, gbc_btnCancel);
 		
-		JButton cancelButton = new JButton("Cancel");
-		cancelButton.addActionListener(new ActionListener() {
+		btnCancel.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 			}
-			
 		});
-		contentPane.add(cancelButton, "8, 12, left, top");
 		
-		JLabel lblNewLabel = new JLabel();
-		//PONER TEXTO EN CASO DE ERROR
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel, "2, 16, 10, 1");
+		JLabel lblNewLabel = new JLabel("Sin errores");
+		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+		gbc_lblNewLabel.gridheight = 2;
+		gbc_lblNewLabel.gridwidth = 8;
+		gbc_lblNewLabel.gridx = 0;
+		gbc_lblNewLabel.gridy = 6;
+		contentPane.add(lblNewLabel, gbc_lblNewLabel);
 		
 	}
 	
