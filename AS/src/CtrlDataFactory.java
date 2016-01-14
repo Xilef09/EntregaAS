@@ -1,3 +1,6 @@
+import Persistencia.ControladorLocal;
+import Persistencia.ControladorLocalDB;
+
 
 public class CtrlDataFactory {
 	private static CtrlDataFactory instance= null;

@@ -5,6 +5,10 @@ public class Estrena extends Representacio{
 
 	private Integer recarrec;
 	
+	public Estrena() {
+		this.recarrec = 2;
+	}
+	
 	public Estrena(Integer recarrec, Float preu, Date data, String sessio, String nomLocal, String titolEspectacle, Integer numSeientsLliures) throws Exception {
 		super(preu, data, numSeientsLliures, sessio, titolEspectacle, nomLocal);
 		if (titolEspectacle.isEmpty() || titolEspectacle == null)

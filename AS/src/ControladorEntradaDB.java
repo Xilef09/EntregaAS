@@ -27,7 +27,7 @@ public class ControladorEntradaDB implements ControladorEntrada {
         ArrayList<Entrada> l = (ArrayList<Entrada>) session.createQuery("FROM Entrada WHERE identificador = :em").setParameter("em", identificador).list();
         session.getTransaction().commit();
         factory.close();
-		return l == null;
+		return l != null;
 	}
 	
 	public Entrada get(String identificador) throws Exception {

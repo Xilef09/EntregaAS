@@ -19,6 +19,12 @@ public class Seient implements Serializable{
 	@Column (name="nomlocal")
 	private String nomLocal;
 	
+	public Seient() {
+		this.fila=12;
+		this.nomLocal="casa";
+		this.columna=13;
+	}
+	
 	public Seient(Integer fila, Integer columna, String nomLocal) throws Exception {
 		// TODO Auto-generated constructor stub
 		super();

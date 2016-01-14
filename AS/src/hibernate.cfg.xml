@@ -32,14 +32,14 @@
         <property name="hbm2ddl.auto">update</property>
         
         <!-- Mention here all the model classes along with their package name -->
- 		<mapping class="Espectacle"/>
- 		<mapping class="Entrada"/>
- 		<mapping class="Estrena"/>
- 		<mapping class="Local"/>
- 		<mapping class="Representacio"/>
- 		<mapping class="Seient"/>
- 		<mapping class="SeientEnRepresentacio"/>
- 		<mapping class="Sessio"/>
+ 		<mapping class="Domini.Espectacle"/>
+ 		<mapping class="Domini.Entrada"/>
+ 		<mapping class="Domini.Estrena"/>
+ 		<mapping class="Domini.Local"/>
+ 		<mapping class="Domini.Representacio"/>
+ 		<mapping class="Domini.Seient"/>
+ 		<mapping class="Domini.SeientEnRepresentacio"/>
+ 		<mapping class="Domini.Sessio"/>
  		
     </session-factory>
 
