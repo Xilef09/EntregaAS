@@ -1,8 +1,12 @@
 package Domini;
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.javatuples.Quintet;
 
 
 @Entity
@@ -14,7 +18,7 @@ public class Espectacle {
 	private String titol;
 	@Column(name = "participants")
 	private Integer participants;
-	
+	private ArrayList<Representacio> representacions;
 	public Espectacle() {
 		
 	}
@@ -47,6 +51,14 @@ public class Espectacle {
 
 	public void setParticipants(Integer participants) {
 		this.participants = participants;
+	}
+
+	public void consultaRepresentacions(String date) {
+		ArrayList<Quintet<String,String,Integer,Boolean,Float>> r = new ArrayList();
+		for(int i=0;i<representacions.size();++i){
+			if(date==representacions.get(i).getData()) 
+					r.add(representacions.get(i).obteDades());
+		}
 	}
 
 }

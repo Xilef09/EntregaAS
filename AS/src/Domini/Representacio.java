@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.javatuples.Quintet;
+
 @Entity
 @Table (name="representacio")
 public class Representacio implements Serializable {
@@ -94,6 +96,12 @@ public class Representacio implements Serializable {
 
 	public void setSessio(String sessio) {
 		this.sessio = sessio;
+	}
+	public Quintet<String, String, Integer, Boolean, Float> obteDades() {
+		return Quintet.with(getNomLocal(),getSessio(),getNombreSeientsLliures(),etsEstrena(),getPreu());
+	}
+	private Boolean etsEstrena() {
+		return false;
 	}
 
 }

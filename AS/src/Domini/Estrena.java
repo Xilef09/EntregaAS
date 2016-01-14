@@ -27,4 +27,7 @@ public class Estrena extends Representacio{
 	public void setRecarrec(Integer recarrec) {
 		this.recarrec = recarrec;
 	}
+	public Boolean etsEstrena(){
+		return true;
+	}
 }
