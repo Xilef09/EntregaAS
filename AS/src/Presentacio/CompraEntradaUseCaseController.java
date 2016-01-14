@@ -6,9 +6,12 @@ import org.javatuples.Pair;
 import org.javatuples.Quintet;
 
 import Domini.ControladorEspectacle;
+import Domini.CtrlComprarEntrada;
+import Domini.CtrlConsultaOcupacio;
 import Domini.CtrlConsultaRepresentacions;
 import Domini.Espectacle;
 import Domini.FactoryControladors;
+import Domini.FactoryCtrlCasDus;
 
 public class CompraEntradaUseCaseController {
 	
@@ -26,22 +29,28 @@ public class CompraEntradaUseCaseController {
 		return ctrRep.consultaRepresentacions(titol,data);
 	}
 	
-	public ArrayList<Pair<Integer, Integer>> obteOcupacio(String nomLocal, String sessio, 
-			Integer nombreEsppectadors) {
-		
-		
+	public ArrayList<Pair<Integer, Integer>> obteOcupacio(String nomLocal, String sessio, Integer nombreEsppectadors) throws Exception {
+		FactoryControladors myFactoryControlador = Domini.FactoryControladors.getInstance();
+	    CtrlConsultaOcupacio ctrConsOcup = myFactoryControlador.getCtrlConsultaOcupacio();
+	    return ctrConsOcup.consultaOcupacio(nomLocal, sessio, nombreEsppectadors);
 	}
 	
-	public Pair<Float, Pair<String, String>> seleccionaSeients(ArrayList<Pair<Integer, Integer>> seients){
-		
+	public Pair<Float, Pair<String, String>> seleccionaSeients(ArrayList<Pair<Integer, Integer>> seients) throws Exception{
+		FactoryCtrlCasDus myFactoryControladorCU = Domini.FactoryCtrlCasDus.getInstance();
+	    CtrlComprarEntrada ctrCU = myFactoryControladorCU.getCtrlComprarEntrada();
+	    return ctrCU.seleccionarSeients(seients);
 	}
 	
-	public Float obtePreuMoneda(String moneda) {
-		
+	public Float obtePreuMoneda(String moneda) throws Exception {
+		FactoryCtrlCasDus myFactoryControladorCU = Domini.FactoryCtrlCasDus.getInstance();
+	    CtrlComprarEntrada ctrCU = myFactoryControladorCU.getCtrlComprarEntrada();
+	    return ctrCU.obtePreuMoneda(moneda);
 	}
 	
-	public void pagament (String dni, Integer codiB, String numCompte) {
-		
+	public void pagament (String dni, Integer codiB, String numCompte) throws Exception {
+		FactoryCtrlCasDus myFactoryControladorCU = Domini.FactoryCtrlCasDus.getInstance();
+	    CtrlComprarEntrada ctrCU = myFactoryControladorCU.getCtrlComprarEntrada();
+	    ctrCU.pagament(dni, codiB, numCompte);
 	}
 	
 	public ArrayList<String> obteEspectacles() {
