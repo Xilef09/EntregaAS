@@ -1,5 +1,6 @@
 package Domini;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -35,6 +36,8 @@ public class Representacio implements Serializable {
 	@Column (name="nombreseientslliures")
 	private Integer nombreSeientsLliures;
 	
+	private ArrayList<SeientEnRepresentacio> llistaSeientEnRep;
+	
 	public Representacio() {
 			
 	}
@@ -50,7 +53,14 @@ public class Representacio implements Serializable {
 		this.nombreSeientsLliures = nombreSeientsLliures;		
 		this.sessio = sessio;		
 		this.titolEspectacle = titolEspectacle;		
-		this.nomLocal = nomLocal;			
+		this.nomLocal = nomLocal;		
+		
+		llistaSeientEnRep = new ArrayList<SeientEnRepresentacio>();
+	}
+	
+	public void hiHaEspai(int numEsp) throws Exception {
+		if (numEsp>nombreSeientsLliures) 
+			throw new Exception ("SeientNoDisp\n");
 	}
 
 	public Float getPreu() {
@@ -107,8 +117,21 @@ public class Representacio implements Serializable {
 		return false;
 	}
 
+
 	public Pair<String, String> obteMesDades() {
 		return Pair.with(getTitolEspectacle(), getData());
+
+	public ArrayList<Pair<Integer,Integer>> consultaOcupacio(String estat) {
+		ArrayList<Pair<Integer,Integer>> ll = new ArrayList<Pair<Integer,Integer>>();
+		for (SeientEnRepresentacio s : llistaSeientEnRep){
+			Integer e = s.getEstat();
+			String estatSeient;
+			if (e==0) estatSeient = "ocupat";
+			else estatSeient = "lliure";
+			if (estat.equals(estatSeient)) ll.add(s.obteUbicacio());
+		}
+		return ll;
+
 	}
 
 }
