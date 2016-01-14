@@ -45,7 +45,7 @@ public class CtrlComprarEntrada {
 		//TO DO
 	}
 	public ArrayList<String> obteEspectacles() throws Exception{
-		CtrlConsultaRepresentacions cr = myfactory.getCtrlConsultaRepresentacions();
+		CtrlConsultaRepresentacions cr = myfactoryCU.getCtrlConsultaRepresentacions();
 		return cr.consultaEspectacles();
 	}
 	
