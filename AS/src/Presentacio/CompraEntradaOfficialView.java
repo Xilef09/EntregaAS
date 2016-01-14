@@ -3,6 +3,7 @@ package Presentacio;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,6 +28,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 
 public class CompraEntradaOfficialView {
 
@@ -34,6 +36,7 @@ public class CompraEntradaOfficialView {
 	private static CompraEntradaController ctrlPresentacion;
 	private JTextField textField;
 	private JFrame frame;
+	private JComboBox<String> comboBox;
 	
 	/**
 	 * Create the frame.
@@ -141,6 +144,10 @@ public class CompraEntradaOfficialView {
 	
 	public void mostra() {
 		frame.setVisible(true);
+	}
+	
+	public void assignaEspectacles(ArrayList<String> listTitolsEspec){
+		comboBox.setModel(new DefaultComboBoxModel(listTitolsEspec.toArray()));
 	}
 
 }

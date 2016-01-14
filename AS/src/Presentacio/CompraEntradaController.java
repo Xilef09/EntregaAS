@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import org.javatuples.Pair;
 
+import Domini.ControladorEspectacle;
+import Domini.FactoryControladors;
+
 public class CompraEntradaController {
 
 	private CompraEntradaUseCaseController compEntrCU;
@@ -18,6 +21,9 @@ public class CompraEntradaController {
 		ArrayList<String> espectacles = compEntrCU.obteEspectacles();
 		// Enviar para que se muestre por pantalla el array, en caso de que este vacio mostrar mensaje
 		// de error correspondiete
+		comprEntrOV = new CompraEntradaOfficialView(this);
+		comprEntrOV.assignaEspectacles(espectacles);
+		comprEntrOV.mostra();
 	}
 	
 	void PrOkobteRepresentacions(String titulo, String data) {
@@ -48,12 +54,6 @@ public class CompraEntradaController {
 	
 	void PrCancela() {
 		
-	}
-
-	public void inicializar() {
-		System.out.println("Ventana 1");
-		comprEntrOV = new CompraEntradaOfficialView(this); 
-		comprEntrOV.mostra();
 	}
 	
 }
