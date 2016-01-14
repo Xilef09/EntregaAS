@@ -50,10 +50,13 @@ public class CompraEntradaController {
 		ArrayList<Pair<Integer,Integer>> ocupacio = new ArrayList<Pair<Integer,Integer>>();
 		try {
 			 ocupacio = compEntrCU.obteOcupacio(nomLocal, sessio, nombEspectadors); 
+			 if (ocupacio==null || ocupacio.isEmpty())
+					throw new Exception ("Error: noHiHaEspectacles\n");
 		}
 		catch (Exception e) {
 			
 		}
+		
 		for(int i = 0; i < ocupacio.size(); ++i) {
 			String auxs = ocupacio.get(i).getValue0() + ","+ ocupacio.get(i).getValue1()  + "";
 			info.add(auxs);
@@ -65,16 +68,35 @@ public class CompraEntradaController {
 	}
 	
 	void PrOkSeleccionarSeients(ArrayList<Pair<Integer, Integer>> myArray) {
+		try {
+			 Pair<Float, Pair<String, String>> resultat = compEntrCU.seleccionaSeients(myArray);
+		}
+		catch (Exception e) {
+			
+		}
+		
+		//falta mostrar preu i aquestes coses
+		
 		comprarEntrada = new ComprarEntrada(this);
 		comprarEntrada.mostra();
 	}
 	
 	void PrObtePreuMoneda(String moneda) {
-		
+		try {
+			 Float p = compEntrCU.obtePreuMoneda(moneda);
+		}
+		catch (Exception e) {
+			
+		}
 	}
 	
 	void PrPagament(String dni, Integer codiB, String numCompte) {
-		
+		try {
+			 compEntrCU.pagament(dni, codiB, numCompte);
+		}
+		catch (Exception e) {
+			
+		}
 	}
 	
 	void PrOkFinalitza() {
