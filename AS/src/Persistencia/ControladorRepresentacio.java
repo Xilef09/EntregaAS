@@ -1,3 +1,4 @@
+package Persistencia;
 import java.util.ArrayList;
 
 import Domini.Representacio;
@@ -9,4 +10,5 @@ public interface ControladorRepresentacio {
 	public Boolean exists(String sessio, String nomLocal) throws Exception;
 	
 	public ArrayList<Representacio> all()throws Exception;
+
 }

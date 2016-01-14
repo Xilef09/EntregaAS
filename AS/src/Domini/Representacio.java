@@ -26,7 +26,7 @@ public class Representacio implements Serializable {
 	private Float preu;
 	
 	@Column (name="data")
-	private Date data;
+	private String data;
 	
 	@Column (name="nombreseientslliures")
 	private Integer nombreSeientsLliures;
@@ -35,7 +35,7 @@ public class Representacio implements Serializable {
 		
 	}
 	
-	public Representacio(Float preu, Date data, Integer nombreSeientsLliures, String sessio, String titolEspectacle, String nomLocal) throws Exception {
+	public Representacio(Float preu, String data, Integer nombreSeientsLliures, String sessio, String titolEspectacle, String nomLocal) throws Exception {
 		super();
 		if (titolEspectacle.isEmpty() || titolEspectacle == null)
 			throw new Exception ("Error: falta escriure un titol d'espectacle\n");
@@ -57,11 +57,11 @@ public class Representacio implements Serializable {
 		this.preu = preu;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
