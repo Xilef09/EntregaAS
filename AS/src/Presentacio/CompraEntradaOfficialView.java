@@ -103,8 +103,8 @@ public class CompraEntradaOfficialView {
 		lblEspectacles.setText("Espectacles");
 		contentPane.add(lblEspectacles, "2, 2, 4, 1, default, center");
 		
-		JComboBox<String> comboBox = new JComboBox<String>();
-		contentPane.add(comboBox, "6, 2, 4, 1, fill, default");
+		//JComboBox<String> comboBox = new JComboBox<String>();
+		//contentPane.add(comboBox, "6, 2, 4, 1, fill, default");
 		
 		JLabel lblDate = new JLabel("Data");
 		contentPane.add(lblDate, "2, 6, right, center");
@@ -152,6 +152,11 @@ public class CompraEntradaOfficialView {
 		System.out.println(listTitolsEspec.get(2));
 		//comboBox =  new JComboBox<>(new String (listTitolsEspec.get(0)));
 		//JComboBox<String> comboBox = new JComboBox<>(new Vector<>(list));
+		JComboBox<String> comboBox = new JComboBox<String>();
+		contentPane.add(comboBox, "6, 2, 4, 1, fill, default");
+		for (String l : listTitolsEspec){
+			comboBox.addItem(l);
+		}
 	}
 
 }
