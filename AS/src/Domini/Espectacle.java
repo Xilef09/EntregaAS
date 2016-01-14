@@ -53,12 +53,13 @@ public class Espectacle {
 		this.participants = participants;
 	}
 
-	public void consultaRepresentacions(String date) {
+	public ArrayList<Quintet<String, String, Integer, Boolean, Float>> consultaRepresentacions(String date) {
 		ArrayList<Quintet<String,String,Integer,Boolean,Float>> r = new ArrayList();
 		for(int i=0;i<representacions.size();++i){
 			if(date==representacions.get(i).getData()) 
 					r.add(representacions.get(i).obteDades());
 		}
+		return r;
 	}
 
 }
