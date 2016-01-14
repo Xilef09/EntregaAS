@@ -135,8 +135,7 @@ public class CompraEntradaOfficialView {
 		});
 		contentPane.add(cancelButton, "8, 12, left, top");
 		
-		JLabel lblNewLabel = new JLabel();
-		//PONER TEXTO EN CASO DE ERROR
+		JLabel lblNewLabel = new JLabel("Sin errores");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel, "2, 16, 10, 1");
 		
