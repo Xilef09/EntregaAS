@@ -53,6 +53,7 @@ public class CtrlComprarEntrada {
 	
 	public float obtePreuMoneda(String moneda){
 		ConversorAdapter ca = myFactoryAdapter.getConversorAdapter();
+		String divisa = myShowsdotCom.getMoneda();
 		
 	}
 	
