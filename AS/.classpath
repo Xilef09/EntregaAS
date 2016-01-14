@@ -14,8 +14,9 @@
 	<classpathentry kind="lib" path="/Users/dani/Desktop/librerias/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="/Users/dani/Desktop/librerias/jandex-1.2.2.Final.jar"/>
 	<classpathentry kind="lib" path="/Users/dani/Desktop/librerias/javassist-3.18.1-GA.jar"/>
+	<classpathentry kind="lib" path="/Users/dani/Desktop/librerias/javatuples-1.2.jar"/>
 	<classpathentry kind="lib" path="/Users/dani/Desktop/librerias/jboss-logging-3.3.0.Final.jar"/>
 	<classpathentry kind="lib" path="/Users/dani/Desktop/librerias/postgresql-9.4-1204.jdbc4.jar"/>
-	<classpathentry kind="lib" path="/Users/dani/Desktop/librerias/javatuples-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/dani/Desktop/librerias/forms-1.3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

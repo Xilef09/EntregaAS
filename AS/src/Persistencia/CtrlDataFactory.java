@@ -23,7 +23,7 @@ public class CtrlDataFactory {
 	private ControladorEntrada controladorEntrada = new ControladorEntradaDB();
 	
 	
-	protected CtrlDataFactory(){
+	private CtrlDataFactory(){
 	}
 	
 	public static CtrlDataFactory getInstance(){

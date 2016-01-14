@@ -2,42 +2,50 @@ package Domini;
 
 public class FactoryControladors {
 
-	private static FactoryControladors instance = null;
+	private static FactoryControladors instance = new FactoryControladors();
 	
-	private ControladorRepresentacio ctrRepresentacio = new ControladorRepresentacio();
-	private ControladorEspectacle ctrEspectacle = new ControladorEspectacle();
-	private ControladorEntrada ctrEntrada = new ControladorEntrada();
-	private ControladorSeientsEnRepresentacio ctrSeientsEnRepresentacio = new ControladorSeientsEnRepresentacio();
-	private CtrlConsultaOcupacio ctrlConsultaOcupacio = new CtrlConsultaOcupacio();
-	private CtrlConsultaRepresentacions ctrlConsultaRepresentacions = new CtrlConsultaRepresentacions();
+	private ControladorRepresentacio ctrlRepresentacio;
+	private ControladorEspectacle ctrlEspectacle;
+	private ControladorEntrada ctrlEntrada;
+	private ControladorSeientsEnRepresentacio ctrlSeientsEnRepresentacio;
+	private CtrlConsultaOcupacio ctrlConsultaOcupacio;
+	private CtrlConsultaRepresentacions ctrlConsultaRepresentacions;
 
-	protected FactoryControladors() {}
+	private FactoryControladors() {
+		ctrlRepresentacio = new ControladorRepresentacio();
+		ctrlEspectacle = new ControladorEspectacle();
+		ctrlEntrada = new ControladorEntrada();
+		ctrlSeientsEnRepresentacio = new ControladorSeientsEnRepresentacio();
+		ctrlConsultaOcupacio = new CtrlConsultaOcupacio();
+		ctrlConsultaRepresentacions = new CtrlConsultaRepresentacions();
+
+	}
 
 	public static FactoryControladors getInstance() {
         if (instance == null) {
-            instance = new FactoryControladors();
+            System.out.println("Singleton sucks");
         }
         return instance;
     }
 
-	public ControladorRepresentacio getCtrRepresentacio() {
-		return ctrRepresentacio;
+	public ControladorRepresentacio getCtrlRepresentacio() {
+		return ctrlRepresentacio;
 	}
 
-	public ControladorEspectacle getCtrEspectacle() {
-		return ctrEspectacle;
+	public ControladorEspectacle getCtrlEspectacle() {
+		return ctrlEspectacle;
 	}
 
-	public ControladorEntrada getCtrEntrada() {
-		return ctrEntrada;
+	public ControladorEntrada getCtrlEntrada() {
+		return ctrlEntrada;
 	}
 
 	public CtrlConsultaRepresentacions getCtrlConsultaRepresentacions() {
 		return ctrlConsultaRepresentacions;
 	}
 
-	public ControladorSeientsEnRepresentacio getCtrSeientsEnRepresentacio() {
-		return ctrSeientsEnRepresentacio;
+	public ControladorSeientsEnRepresentacio getCtrlSeientsEnRepresentacio() {
+		return ctrlSeientsEnRepresentacio;
 	}
 
 	public CtrlConsultaOcupacio getCtrlConsultaOcupacio() {
