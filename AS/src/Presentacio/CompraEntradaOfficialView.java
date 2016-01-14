@@ -29,6 +29,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class CompraEntradaOfficialView {
 
@@ -146,7 +147,11 @@ public class CompraEntradaOfficialView {
 	}
 	
 	public void assignaEspectacles(ArrayList<String> listTitolsEspec){
-		comboBox.setModel(new DefaultComboBoxModel(listTitolsEspec.toArray()));
+		System.out.println(listTitolsEspec.get(0));
+		System.out.println(listTitolsEspec.get(1));
+		System.out.println(listTitolsEspec.get(2));
+		//comboBox =  new JComboBox<>(new String (listTitolsEspec.get(0)));
+		//JComboBox<String> comboBox = new JComboBox<>(new Vector<>(list));
 	}
 
 }

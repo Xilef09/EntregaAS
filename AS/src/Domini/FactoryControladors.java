@@ -2,7 +2,7 @@ package Domini;
 
 public class FactoryControladors {
 
-	private static FactoryControladors instance;
+	private static FactoryControladors instance = new FactoryControladors();
 	
 	private ControladorRepresentacio ctrlRepresentacio;
 	private ControladorEspectacle ctrlEspectacle;
@@ -23,7 +23,7 @@ public class FactoryControladors {
 
 	public static FactoryControladors getInstance() {
         if (instance == null) {
-            instance = new FactoryControladors();
+            System.out.println("Singleton sucks");
         }
         return instance;
     }
