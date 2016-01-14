@@ -26,5 +26,13 @@ public class Showsdotcom {
 	public Pair<String,String> getCanvis(){
 		return canvis;
 	}
+
+	public Integer getCodiBancShows() {
+		return codiBanc;
+	}
+
+	public String getNumCompteShows() {
+		return numeroCompte;
+	}
 	
 }

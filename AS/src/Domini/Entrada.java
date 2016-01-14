@@ -52,6 +52,13 @@ public class Entrada {
 		this.nomLocal=nomLocal;
 	}
 
+	public Entrada(String id, String dni, Integer nSeients, String dataActual, Float preuTotal) {
+		this.identificador=id;
+		this.dniClient=dni;
+		this.nombreEspectadors=nSeients;
+		this.data=dataActual;
+		this.preu=preuTotal;
+	}
 	public String getIdentificador() {
 		return identificador;
 	}

@@ -1,6 +1,8 @@
 package Domini;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Random;
 
 import org.javatuples.*;
 
@@ -16,7 +18,8 @@ public class CtrlComprarEntrada {
 	private Float preuTotal;
 	
 	private FactoryControladors myFactory = FactoryControladors.getInstance();
-	private FactoryCtrlCasDus myfactoryCU = FactoryCtrlCasDus.getInstance();
+	private FactoryCtrlCasDus myFactoryCU = FactoryCtrlCasDus.getInstance();
+	private FactoryAdapters myFactoryAdap = FactoryAdapters.getInstance();
 	private Showsdotcom myShowsdotCom = Showsdotcom.getInstance();
 	
 	public ArrayList<Quintet<String,String,Integer,Boolean,Float>> obteRepresentacions(String titol, String date) throws Exception{
@@ -29,7 +32,7 @@ public class CtrlComprarEntrada {
 		return ll;
 	}
 	public ArrayList<Pair<Integer,Integer>> obteOcupacio(String nomLocal, String sessio, Integer nombEspectadors) throws Exception{
-		CtrlConsultaOcupacio co = myfactoryCU.getCtrlConsultaOcupacio();
+		CtrlConsultaOcupacio co = myFactoryCU.getCtrlConsultaOcupacio();
 		ArrayList<Pair<Integer,Integer>> result = co.consultaOcupacio(nomLocal, sessio, nombEspectadors);
 		this.nomLocal=nomLocal;
 		this.sessio = sessio;
@@ -41,7 +44,7 @@ public class CtrlComprarEntrada {
 		ControladorRepresentacio cr = myFactory.getCtrlRepresentacio();
 		Representacio representacio = cr.getRepresentacio(nomLocal, sessio);
 		Float preu = representacio.getPreu();
-		Float recarrec = representacio.getRecarrec();
+		Integer recarrec = representacio.getRecarrec();
 		Float comissio = myShowsdotCom.getComisio();
 		Pair<String,String> canvis = myShowsdotCom.getCanvis();
 		Float pfinal = numSeients*(preu+recarrec+comissio);
@@ -52,11 +55,30 @@ public class CtrlComprarEntrada {
 	public float obtePreuMoneda(String moneda){
 		return (Float) null; //TO DO 
 	}
-	public void pagament (String dni, Integer codiB, String numCompte){
-		//TO DO
+	public void pagament (String dni, Integer codiB, String numCompte) throws Exception{
+		iBankAdapter myBankAdapter = myFactoryAdap.getBankAdapter();
+		Integer codiBancShows = myShowsdotCom.getCodiBancShows();
+		String numCompteShows = myShowsdotCom.getNumCompteShows();
+		String dataActual = Integer.toString(Calendar.DATE) + "/"+ Integer.toString(Calendar.MONTH)+1 + "/"+ Integer.toString(Calendar.YEAR);
+		Boolean b = myBankAdapter.autoritza(dni, codiBancShows, numCompteShows, codiB, numCompte, dataActual);
+		if (!b) throw new Exception("pagament no autoritzat MOROSO!!!!");
+		ControladorEntrada ce = myFactory.getCtrlEntrada();
+		Boolean existeixID = true;
+		Random ran = new Random();
+		String id= Integer.toString(ran.nextInt(10000));
+		while(existeixID){
+			id = Integer.toString(ran.nextInt(10000));
+			existeixID = ce.existeixEntrada(id);
+		}
+		Integer nSeients = seients.size();
+		Entrada e = new Entrada(id,dni,nSeients,dataActual,preuTotal);
+		
+		//pre fer
+		
+		
 	}
 	public ArrayList<String> obteEspectacles() throws Exception{
-		CtrlConsultaRepresentacions cr = myfactoryCU.getCtrlConsultaRepresentacions();
+		CtrlConsultaRepresentacions cr = myFactoryCU.getCtrlConsultaRepresentacions();
 		return cr.consultaEspectacles();
 	}
 	
