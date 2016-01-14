@@ -4,10 +4,10 @@ public class FactoryControladors {
 
 	private static FactoryControladors instance = null;
 	
-	private ControladorRepresentacio ctrRepresentacio = new ControladorRepresentacio();
-	private ControladorEspectacle ctrEspectacle = new ControladorEspectacle();
-	private ControladorEntrada ctrEntrada = new ControladorEntrada();
-	private ControladorSeientsEnRepresentacio ctrSeientsEnRepresentacio = new ControladorSeientsEnRepresentacio();
+	private ControladorRepresentacio ctrlRepresentacio = new ControladorRepresentacio();
+	private ControladorEspectacle ctrlEspectacle = new ControladorEspectacle();
+	private ControladorEntrada ctrlEntrada = new ControladorEntrada();
+	private ControladorSeientsEnRepresentacio ctrlSeientsEnRepresentacio = new ControladorSeientsEnRepresentacio();
 	private CtrlConsultaOcupacio ctrlConsultaOcupacio = new CtrlConsultaOcupacio();
 	private CtrlConsultaRepresentacions ctrlConsultaRepresentacions = new CtrlConsultaRepresentacions();
 
@@ -20,24 +20,24 @@ public class FactoryControladors {
         return instance;
     }
 
-	public ControladorRepresentacio getCtrRepresentacio() {
-		return ctrRepresentacio;
+	public ControladorRepresentacio getCtrlRepresentacio() {
+		return ctrlRepresentacio;
 	}
 
-	public ControladorEspectacle getCtrEspectacle() {
-		return ctrEspectacle;
+	public ControladorEspectacle getCtrlEspectacle() {
+		return ctrlEspectacle;
 	}
 
-	public ControladorEntrada getCtrEntrada() {
-		return ctrEntrada;
+	public ControladorEntrada getCtrlEntrada() {
+		return ctrlEntrada;
 	}
 
 	public CtrlConsultaRepresentacions getCtrlConsultaRepresentacions() {
 		return ctrlConsultaRepresentacions;
 	}
 
-	public ControladorSeientsEnRepresentacio getCtrSeientsEnRepresentacio() {
-		return ctrSeientsEnRepresentacio;
+	public ControladorSeientsEnRepresentacio getCtrlSeientsEnRepresentacio() {
+		return ctrlSeientsEnRepresentacio;
 	}
 
 	public CtrlConsultaOcupacio getCtrlConsultaOcupacio() {

@@ -17,6 +17,7 @@ public class CtrlComprarEntrada {
 	
 	private FactoryControladors myFactory = FactoryControladors.getInstance();
 	private FactoryCtrlCasDus myfactoryCU = FactoryCtrlCasDus.getInstance();
+	private Showsdotcom myShowsdotCom = Showsdotcom.getInstance();
 	
 	public ArrayList<Quintet<String,String,Integer,Boolean,Float>> obteRepresentacions(String titol, String date) throws Exception{
 		CtrlConsultaRepresentacions ctrConsultaRep = myFactory.getCtrlConsultaRepresentacions();
@@ -35,8 +36,18 @@ public class CtrlComprarEntrada {
 		this.nombEspectadors= nombEspectadors;
 		return result;
 	}
-	public Pair<Float,ArrayList<String>> seleccionarSeients (ArrayList<Pair> seients){
-		return null; //TO DO
+	public Pair<Float,Pair<String,String>> seleccionarSeients (ArrayList<Pair<Integer, Integer>> seients)throws Exception{
+		int numSeients = seients.size();
+		ControladorRepresentacio cr = myFactory.getCtrlRepresentacio();
+		Representacio representacio = cr.getRepresentacio(nomLocal, sessio);
+		Float preu = representacio.getPreu();
+		Float recarrec = representacio.getRecarrec();
+		Float comissio = myShowsdotCom.getComisio();
+		Pair<String,String> canvis = myShowsdotCom.getCanvis();
+		Float pfinal = numSeients*(preu+recarrec+comissio);
+		this.seients= seients;
+		this.preuTotal = pfinal;
+		return Pair.with(pfinal, canvis);
 	}
 	public float obtePreuMoneda(String moneda){
 		return (Float) null; //TO DO 
@@ -48,6 +59,7 @@ public class CtrlComprarEntrada {
 		CtrlConsultaRepresentacions cr = myfactoryCU.getCtrlConsultaRepresentacions();
 		return cr.consultaEspectacles();
 	}
+	
 	
 
 }
