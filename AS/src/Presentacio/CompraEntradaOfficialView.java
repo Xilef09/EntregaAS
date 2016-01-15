@@ -134,6 +134,7 @@ public class CompraEntradaOfficialView {
 				    //System.out.println(titol + " " + data);
 					ctrlPresentacion.PrOkobteRepresentacions(titol, data);
 					
+					
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					//lblNewLabel.setText("No hay Representaciones para Esa Data y ese Espectaculo");
