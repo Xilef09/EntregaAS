@@ -21,9 +21,11 @@ public class CtrlConsultaRepresentacions {
 	}
 	
 	public ArrayList <Quintet<String, String, Integer, Boolean, Float>> consultaRepresentacions(String titol, String date) throws Exception{
+		System.out.println("t->"+titol+"   dattt->"+date);
 		myFactory = FactoryControladors.getInstance();
 		ControladorEspectacle ce = myFactory.getCtrlEspectacle();
 		Espectacle espectacle = ce.getEspectacle(titol);
+		System.out.println("jklfdskjladfsjk->"+espectacle.consultaRepresentacions(date)+"<----");
 		return espectacle.consultaRepresentacions(date);
 	}
 	
