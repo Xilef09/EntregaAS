@@ -24,12 +24,8 @@ public class CompraEntradaUseCaseController {
 	
 	
 	public ArrayList<Quintet<String, String, Integer, Boolean, Float>> ObteRepresentacions (String titol, String data) throws Exception {
-		System.out.println("t->"+titol+"   dat->"+data);
-
 		FactoryControladors myFactoryControlador = Domini.FactoryControladors.getInstance();
-
 		CtrlConsultaRepresentacions ctrRep = myFactoryControlador.getCtrlConsultaRepresentacions();
-
 		return ctrRep.consultaRepresentacions(titol,data);
 	}
 	

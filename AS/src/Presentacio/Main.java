@@ -22,8 +22,8 @@ public class Main {
 	private static Session session;
 
 	private static void creaEspec() throws Exception{
-		/*System.out.println("entrooooooooooo");
-		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		System.out.println("entrooooooooooo");
+		/*SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		session = factory.openSession();
 		
 		Representacio e = new Representacio();
@@ -31,6 +31,7 @@ public class Main {
 		e.setTitolEspectacle("Espe1");
 		e.setSessio("mati");
 		e.setNomLocal("Local1");
+		e.setPreu((float)15.00);
 		e.setData("01-01-16");
 		e.setNombreSeientsLliures(100);
 		session.beginTransaction();
@@ -42,12 +43,14 @@ public class Main {
 		e.setSessio("tarda");
 		e.setNomLocal("Local1");
 		e.setData("01-01-16");
+		e.setPreu((float)15.00);
 		e.setNombreSeientsLliures(100);
 		session.beginTransaction();
 		session.save(e);
 		session.getTransaction().commit();
 		
 		e = new Representacio();
+		e.setPreu((float)15.00);
 		e.setTitolEspectacle("Espe1");
 		e.setSessio("nit");
 		e.setNomLocal("Local2");
@@ -60,6 +63,7 @@ public class Main {
 		e = new Representacio();
 		e.setTitolEspectacle("Espe2");
 		e.setSessio("mati");
+		e.setPreu((float)15.00);
 		e.setNomLocal("Local3");
 		e.setData("01-01-15");
 		e.setNombreSeientsLliures(100);
@@ -70,6 +74,7 @@ public class Main {
 
 		Estrena s1 = new Estrena();
 		s1.setRecarrec(5);
+		s1.setPreu((float)15.00);
 		s1.setData("01-01-16");
 		s1.setTitolEspectacle("Espe1");
 		s1.setSessio("nit");
@@ -77,9 +82,6 @@ public class Main {
 		session.beginTransaction();
 		session.save(s1);
 		session.getTransaction().commit();
-
-		session.close();
-		factory.close();
 		
 		session.close();
 		factory.close();*/

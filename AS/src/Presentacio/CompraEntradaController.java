@@ -66,22 +66,22 @@ public class CompraEntradaController {
 		}
 		
 		mostraOcupa = new MostraOcupacio(this);
-		System.out.println("info->>"+info);
 		mostraOcupa.asignaSeients(info);
 		mostraOcupa.mostra();
 	}
 	
 	void PrOkSeleccionarSeients(ArrayList<Pair<Integer, Integer>> myArray) {
+		Pair<Float, Pair<String, String>> resultat = null;
 		try {
-			 Pair<Float, Pair<String, String>> resultat = compEntrCU.seleccionaSeients(myArray);
+			 resultat = compEntrCU.seleccionaSeients(myArray);
 		}
 		catch (Exception e) {
 			
 		}
 		
 		//falta mostrar preu i aquestes coses
-		
 		comprarEntrada = new ComprarEntrada(this);
+		comprarEntrada.assignaEspectacles(15);
 		comprarEntrada.mostra();
 	}
 	
@@ -92,6 +92,8 @@ public class CompraEntradaController {
 		catch (Exception e) {
 			
 		}
+		
+		
 	}
 	
 	void PrPagament(String dni, Integer codiB, String numCompte) {

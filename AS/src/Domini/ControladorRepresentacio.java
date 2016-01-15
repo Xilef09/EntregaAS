@@ -13,6 +13,7 @@ public class ControladorRepresentacio {
 
 	public Representacio getRepresentacio(String nomLocal, String sessio) throws Exception{
 		Persistencia.ControladorRepresentacio ctrRep = ctrlDataFactory.getControladorRepresentacio();
+		Representacio r = ctrRep.get(sessio,nomLocal);
 		return ctrRep.get(sessio,nomLocal);
 	}
 	

@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Domini.CurrentConvertorService;
+import Domini.ServiceLocator;
+
 import java.awt.GridBagLayout;
 
 import javax.swing.JLabel;
@@ -42,7 +45,7 @@ public class ComprarEntrada {
 	private JRadioButton rdbtnNewRadioButton;
 	private JRadioButton rdbtnNewRadioButton_1;
 	private JLabel lblPreu;
-	private JLabel label;
+	private JLabel label= new JLabel();;
 	
 
 	/**
@@ -74,12 +77,12 @@ public class ComprarEntrada {
 		gbc_lblPreu.gridy = 1;
 		contentPane.add(lblPreu, gbc_lblPreu);
 		
-		label = new JLabel("0\u20AC");
+		/*label = new JLabel("0\u20AC");
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		gbc_label.insets = new Insets(0, 0, 5, 5);
 		gbc_label.gridx = 4;
 		gbc_label.gridy = 1;
-		contentPane.add(label, gbc_label);
+		contentPane.add(label, gbc_label);*/
 		
 		JLabel lblNewLabel = new JLabel("DNI");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
@@ -200,10 +203,58 @@ public class ComprarEntrada {
 		bg.add(rdbtnNewRadioButton_1);
 		bg.add(radioButton);
 		bg.add(rdbtnNewRadioButton);
+		
+		radioButton.addActionListener(new ActionListener() {
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            //eur
+	        	ServiceLocator sl = Domini.ServiceLocator.getInstance();
+	        	CurrentConvertorService ccs = (CurrentConvertorService) sl.find("CurrentConvertorService");
+	        	float rate = ccs.conversionRate("EUR", "EUR");
+	        	float aux = rate * (float)15;
+	        	assignaEspectacles(aux);
+	        }
+	    });
+		
+		rdbtnNewRadioButton_1.addActionListener(new ActionListener() {
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            //eur
+	        	ServiceLocator sl = Domini.ServiceLocator.getInstance();
+	        	CurrentConvertorService ccs = (CurrentConvertorService) sl.find("CurrentConvertorService");
+	        	float rate = ccs.conversionRate("EUR", "GBP");
+	        	float aux = rate * (float)15;
+	        	assignaEspectacles(aux);
+	        }
+	    });
+		
+		rdbtnNewRadioButton.addActionListener(new ActionListener() {
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            //eur
+	        	ServiceLocator sl = Domini.ServiceLocator.getInstance();
+	        	CurrentConvertorService ccs = (CurrentConvertorService) sl.find("CurrentConvertorService");
+	        	float rate = ccs.conversionRate("EUR", "USD");
+	        	float aux = rate * (float)15;
+	        	assignaEspectacles(aux);
+	        }
+	    });
+		
+		
+
 	}
 	
 	public void mostra() {
 		// TODO Auto-generated method stub
 		frame.setVisible(true);
+	}
+	
+	public void assignaEspectacles(float p){
+		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.insets = new Insets(0, 0, 5, 5);
+		gbc_label.gridx = 4;
+		gbc_label.gridy = 1;
+		contentPane.add(label, gbc_label);
+		label.setText(""+p);
 	}
 }
