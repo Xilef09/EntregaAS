@@ -22,11 +22,64 @@ public class Main {
 	private static Session session;
 
 	private static void creaEspec() throws Exception{
-		//System.out.println("entrooooooooooo");
-		//SessionFactory factory = new Configuration().configure().buildSessionFactory();
-		//session = factory.openSession();
+		/*System.out.println("entrooooooooooo");
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		session = factory.openSession();
 		
+		Representacio e = new Representacio();
 		
+		e.setTitolEspectacle("Espe1");
+		e.setSessio("mati");
+		e.setNomLocal("Local1");
+		e.setData("01-01-16");
+		e.setNombreSeientsLliures(100);
+		session.beginTransaction();
+		session.save(e);
+		session.getTransaction().commit();
+		
+		e = new Representacio();
+		e.setTitolEspectacle("Espe1");
+		e.setSessio("tarda");
+		e.setNomLocal("Local1");
+		e.setData("01-01-16");
+		e.setNombreSeientsLliures(100);
+		session.beginTransaction();
+		session.save(e);
+		session.getTransaction().commit();
+		
+		e = new Representacio();
+		e.setTitolEspectacle("Espe1");
+		e.setSessio("nit");
+		e.setNomLocal("Local2");
+		e.setData("01-01-16");
+		e.setNombreSeientsLliures(100);
+		session.beginTransaction();
+		session.save(e);
+		session.getTransaction().commit();
+		
+		e = new Representacio();
+		e.setTitolEspectacle("Espe2");
+		e.setSessio("mati");
+		e.setNomLocal("Local3");
+		e.setData("01-01-15");
+		e.setNombreSeientsLliures(100);
+		session.beginTransaction();
+		session.save(e);
+		session.getTransaction().commit();
+		
+
+		Estrena s1 = new Estrena();
+		s1.setRecarrec(5);
+		s1.setData("01-01-16");
+		s1.setTitolEspectacle("Espe1");
+		s1.setSessio("nit");
+		s1.setNomLocal("Local1");
+		session.beginTransaction();
+		session.save(s1);
+		session.getTransaction().commit();
+		
+		session.close();
+		factory.close();*/
 	}
 	//-------------------------------------------------------
 	

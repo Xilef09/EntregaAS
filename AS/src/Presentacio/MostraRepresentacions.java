@@ -24,6 +24,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
 
@@ -66,7 +67,7 @@ public class MostraRepresentacions {
 		gbc_lblNewLabel_1.gridy = 0;
 		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		list = new JList();
+		/*list = new JList();
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		GridBagConstraints gbc_list = new GridBagConstraints();
 		gbc_list.gridwidth = 3;
@@ -75,7 +76,7 @@ public class MostraRepresentacions {
 		gbc_list.fill = GridBagConstraints.BOTH;
 		gbc_list.gridx = 1;
 		gbc_list.gridy = 1;
-		contentPane.add(list, gbc_list);
+		contentPane.add(list, gbc_list);*/
 		
 		JLabel lblNombreEspectadors = new JLabel("Nombre Espectadors");
 		GridBagConstraints gbc_lblNombreEspectadors = new GridBagConstraints();
@@ -152,9 +153,14 @@ public class MostraRepresentacions {
 	}
 
 	public void asignaRepresentacions(ArrayList<String> informacio) {
+		System.out.println("info-->"+informacio);
 		if (informacio.size()==0) lblNewLabel.setText("No hi ha representacions per l'espectacle i data");
-		String llista[] = informacio.stream().toArray(String[]::new);
-		list = new JList(llista);
+		DefaultListModel<String> model = new DefaultListModel<String>();
+		for(String s:informacio){
+		    model.addElement(s);
+		}
+		System.out.println("info2-->"+model);
+		list = new JList(model);
 		GridBagConstraints gbc_list = new GridBagConstraints();
 		gbc_list.gridwidth = 3;
 		gbc_list.gridheight = 5;

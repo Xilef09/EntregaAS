@@ -113,7 +113,7 @@ public class Representacio implements Serializable {
 	public Quintet<String, String, Integer, Boolean, Float> obteDades() {
 		return Quintet.with(getNomLocal(),getSessio(),getNombreSeientsLliures(),etsEstrena(),getPreu());
 	}
-	private Boolean etsEstrena() {
+	public Boolean etsEstrena() {
 		return false;
 	}
 
