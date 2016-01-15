@@ -34,7 +34,6 @@ public class CompraEntradaController {
 	void PrOkobteRepresentacions(String titulo, String data) throws Exception {
 		ArrayList<Quintet<String, String, Integer, Boolean, Float>> lr = compEntrCU.ObteRepresentacions(titulo, data);
 		ArrayList<String> informacio = new ArrayList<String>();
-		System.out.println("size->"+lr.size());
 		for (Quintet<String, String, Integer, Boolean, Float> qr: lr) {
 			String info = ""+qr.getValue0()+","+qr.getValue1()+","+qr.getValue2()+","+qr.getValue3()+","+qr.getValue4();
 			informacio.add(info); //informacio te un string per cada representacio, es posa directament al box
@@ -52,11 +51,13 @@ public class CompraEntradaController {
 		ArrayList<Pair<Integer,Integer>> ocupacio = new ArrayList<Pair<Integer,Integer>>();
 		try {
 			 ocupacio = compEntrCU.obteOcupacio(nomLocal, sessio, nombEspectadors); 
+				System.out.println("ocupacio->>"+ocupacio);
+
 			 if (ocupacio==null || ocupacio.isEmpty())
 					throw new Exception ("Error: noHiHaEspectacles\n");
 		}
 		catch (Exception e) {
-			
+			//e.printStackTrace();
 		}
 		
 		for(int i = 0; i < ocupacio.size(); ++i) {
@@ -65,6 +66,7 @@ public class CompraEntradaController {
 		}
 		
 		mostraOcupa = new MostraOcupacio(this);
+		System.out.println("info->>"+info);
 		mostraOcupa.asignaSeients(info);
 		mostraOcupa.mostra();
 	}

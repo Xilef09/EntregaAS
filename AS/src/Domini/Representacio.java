@@ -127,10 +127,12 @@ public class Representacio implements Serializable {
 		for (SeientEnRepresentacio s : llistaSeientEnRep){
 			Integer e = s.getEstat();
 			String estatSeient;
-			if (e==0) estatSeient = "ocupat";
+			if (e==1) estatSeient = "ocupat";
 			else estatSeient = "lliure";
 			if (estat.equals(estatSeient)) ll.add(s.obteUbicacio());
 		}
+		
+		System.out.println("fjksdifopsajknvzlsf"+ll);
 		return ll;
 
 	}

@@ -9,9 +9,15 @@ public class CtrlConsultaOcupacio {
 	
 	public ArrayList<Pair<Integer,Integer>> consultaOcupacio(String nomLocal, String sessio, Integer nombEspectadors) throws Exception{
 		myFactory = FactoryControladors.getInstance();
+		System.out.println("3.1");
 		ControladorRepresentacio ctrConsultaRep = myFactory.getCtrlRepresentacio();
+		System.out.println("3.2");
+
 		Representacio r = ctrConsultaRep.getRepresentacio(nomLocal, sessio);
-		r.hiHaEspai(nombEspectadors);
+		System.out.println("3.3");
+
+		//r.hiHaEspai(nombEspectadors);
+		System.out.println("3.4");
 		return r.consultaOcupacio("lliure");
 	}
 	public ArrayList<Septet<String,String,String,String,Integer,Boolean,Float>> totesRepresentacions() throws Exception{
