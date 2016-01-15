@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import org.javatuples.Pair;
 import org.javatuples.Quintet;
 import org.javatuples.Septet;
+import Persistencia.*;
 
 @Entity
 @Table (name="representacio")
@@ -36,7 +37,7 @@ public class Representacio implements Serializable {
 	@Column (name="nombreseientslliures")
 	private Integer nombreSeientsLliures;
 	
-	private ArrayList<SeientEnRepresentacio> llistaSeientEnRep;
+	private ArrayList<SeientEnRepresentacio> llistaSeientEnRep = new ArrayList<SeientEnRepresentacio>();
 	
 	public Representacio() {
 			
@@ -124,15 +125,12 @@ public class Representacio implements Serializable {
 	
 	public ArrayList<Pair<Integer,Integer>> consultaOcupacio(String estat) {
 		ArrayList<Pair<Integer,Integer>> ll = new ArrayList<Pair<Integer,Integer>>();
-		for (SeientEnRepresentacio s : llistaSeientEnRep){
-			Integer e = s.getEstat();
-			String estatSeient;
-			if (e==1) estatSeient = "ocupat";
-			else estatSeient = "lliure";
-			if (estat.equals(estatSeient)) ll.add(s.obteUbicacio());
-		}
 		
-		System.out.println("fjksdifopsajknvzlsf"+ll);
+		Persistencia.ControladorSeientsEnRepresentacio cer = new Persistencia.ControladorSeientsEnRepresentacioDB();
+		ArrayList<SeientEnRepresentacio> res = cer.all();
+		for (SeientEnRepresentacio rep : res){
+			if(rep.getEstat()==0 && rep.getNomLocal().equals(getNomLocal())) ll.add(Pair.with(rep.getFila(), rep.getColumna()));
+		}
 		return ll;
 
 	}

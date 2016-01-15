@@ -34,13 +34,8 @@ public class CompraEntradaUseCaseController {
 	}
 	
 	public ArrayList<Pair<Integer, Integer>> obteOcupacio(String nomLocal, String sessio, Integer nombreEsppectadors) throws Exception {
-		System.out.println("1");
 		FactoryControladors myFactoryControlador = Domini.FactoryControladors.getInstance();
-		System.out.println("2");
-
 	    CtrlConsultaOcupacio ctrConsOcup = myFactoryControlador.getCtrlConsultaOcupacio();
-		System.out.println("3");
-
 	    return ctrConsOcup.consultaOcupacio(nomLocal, sessio, nombreEsppectadors);
 	}
 	

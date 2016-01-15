@@ -5,6 +5,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -70,7 +71,7 @@ public class MostraOcupacio {
 		gbc_lblNewLabel_1.gridx = 1;
 		gbc_lblNewLabel_1.gridy = 0;
 		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
-		
+		/*
 		list = new JList();
 		list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		GridBagConstraints gbc_list = new GridBagConstraints();
@@ -80,7 +81,7 @@ public class MostraOcupacio {
 		gbc_list.fill = GridBagConstraints.BOTH;
 		gbc_list.gridx = 1;
 		gbc_list.gridy = 1;
-		contentPane.add(list, gbc_list);
+		contentPane.add(list, gbc_list);*/
 		
 		JLabel lblNewLabel = new JLabel("Sin errores");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -140,8 +141,12 @@ public class MostraOcupacio {
 	}
 	
 	public void asignaSeients(ArrayList<String> aux) {
-		String llista[] = aux.stream().toArray(String[]::new);
-		list = new JList(llista);
+		DefaultListModel<String> model = new DefaultListModel<String>();
+		for(String s:aux){
+		    model.addElement(s);
+		}
+		System.out.println("info222-->"+model);
+		list = new JList(model);
 		GridBagConstraints gbc_list = new GridBagConstraints();
 		gbc_list.gridwidth = 3;
 		gbc_list.gridheight = 5;

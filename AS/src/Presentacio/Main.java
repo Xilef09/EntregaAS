@@ -77,6 +77,9 @@ public class Main {
 		session.beginTransaction();
 		session.save(s1);
 		session.getTransaction().commit();
+
+		session.close();
+		factory.close();
 		
 		session.close();
 		factory.close();*/

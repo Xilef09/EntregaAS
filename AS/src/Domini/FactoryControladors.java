@@ -24,10 +24,8 @@ public class FactoryControladors {
 
 	public static FactoryControladors getInstance() {
         if (instance == null) {
-        	System.out.println("Singleton sucks");
         	instance = new FactoryControladors();
         }
-        System.out.println("Singleton sucks2");
         return instance;
     }
 

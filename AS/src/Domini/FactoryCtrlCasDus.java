@@ -1,17 +1,19 @@
 package Domini;
 
 public class FactoryCtrlCasDus {
-	private static FactoryCtrlCasDus instance= null;
-	private CtrlConsultaOcupacio ctrlConsultaOcupacio = new CtrlConsultaOcupacio();
-	private CtrlConsultaRepresentacions ctrlConsultaRepresentacions = new CtrlConsultaRepresentacions();
-	private CtrlComprarEntrada ctrlComprarEntrada = new CtrlComprarEntrada();
+	private static FactoryCtrlCasDus instance= new FactoryCtrlCasDus();
+	private CtrlConsultaOcupacio ctrlConsultaOcupacio;
+	private CtrlConsultaRepresentacions ctrlConsultaRepresentacions;
+	private CtrlComprarEntrada ctrlComprarEntrada;
 	
 	private FactoryCtrlCasDus(){
+		ctrlConsultaOcupacio = new CtrlConsultaOcupacio();
+		ctrlConsultaRepresentacions = new CtrlConsultaRepresentacions();
+		ctrlComprarEntrada = new CtrlComprarEntrada();
 	}
 	
 	public static FactoryCtrlCasDus getInstance(){
 		if(instance == null) {
-	         instance = new FactoryCtrlCasDus();
 	      }
 		return instance;
 	}

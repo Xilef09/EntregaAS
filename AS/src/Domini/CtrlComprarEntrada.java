@@ -19,11 +19,19 @@ public class CtrlComprarEntrada {
 	private ArrayList<Pair<Integer,Integer>> seients;
 	private Float preuTotal;
 	
-	private FactoryAdapters myFactoryAdapter = FactoryAdapters.getInstance();
-	private FactoryControladors myFactory = FactoryControladors.getInstance();
-	private FactoryCtrlCasDus myFactoryCU = FactoryCtrlCasDus.getInstance();
-	private FactoryAdapters myFactoryAdap = FactoryAdapters.getInstance();
-	private Showsdotcom myShowsdotCom = Showsdotcom.getInstance();
+	private FactoryAdapters myFactoryAdapter;
+	private FactoryControladors myFactory;
+	private FactoryCtrlCasDus myFactoryCU;
+	private FactoryAdapters myFactoryAdap;
+	private Showsdotcom myShowsdotCom;
+	
+	public CtrlComprarEntrada(){
+		myFactoryAdapter = FactoryAdapters.getInstance();
+		myFactory = FactoryControladors.getInstance();
+		myFactoryCU = FactoryCtrlCasDus.getInstance();
+		myFactoryAdap = FactoryAdapters.getInstance();
+		myShowsdotCom = Showsdotcom.getInstance();
+	}
 	
 	public ArrayList<Quintet<String,String,Integer,Boolean,Float>> obteRepresentacions(String titol, String date) throws Exception{
 		CtrlConsultaRepresentacions ctrConsultaRep = myFactory.getCtrlConsultaRepresentacions();
